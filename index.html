@@ -81,9 +81,10 @@
   .nav-links { display: flex; align-items: center; gap: var(--s3); }
   .nav-link {
     position: relative; color: rgba(255,255,255,.82); text-decoration: none; font-size: .95rem; font-weight: 500;
-    display: none;
+    display: none; white-space: nowrap;
   }
-  @media (min-width: 640px) { .nav-link { display: inline-block; } }
+  .brand-name { white-space: nowrap; }
+  @media (min-width: 860px) { .nav-link { display: inline-block; } }
   .nav-link::after {
     content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--red);
     transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease-out);
@@ -176,6 +177,8 @@
 
   /* ---------- writing list (elevated paper layer) ---------- */
   .section { padding: var(--s6) 0; }
+  .section.category + .section.category { padding-top: 0; }
+  [id] { scroll-margin-top: 84px; }
   .section-head { display: flex; align-items: end; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s4); }
   .section-head h2 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin: 0; }
   .text-link {
@@ -260,7 +263,9 @@
       <span class="brand-name">Saintly Ponderings</span>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a class="nav-link" href="#writing">Writing</a>
+      <a class="nav-link" href="#musings">Musings</a>
+      <a class="nav-link" href="#match-report">Match Report</a>
+      <a class="nav-link" href="#news-politics">News &amp; Politics</a>
       <a class="nav-link" href="#about">About</a>
       <a class="btn btn-sm" href="#subscribe">Subscribe</a>
     </nav>
@@ -291,11 +296,11 @@
     </div>
   </section>
 
-  <section id="writing" class="section">
+  <section id="musings" class="section category">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="display">Latest ponderings</h2>
-        <a class="text-link" href="#">All writing</a>
+        <h2 class="display">Musings</h2>
+        <a class="text-link" href="#">All musings</a>
       </div>
 
       <ul class="posts">
@@ -327,6 +332,90 @@
               <p>The quietest crowd you'll ever be part of, and why it's still worth being in it.</p>
             </div>
             <span class="len">7 min read</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="match-report" class="section category">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">Match Report</h2>
+        <a class="text-link" href="#">All match reports</a>
+      </div>
+
+      <ul class="posts">
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-11-07">7 November 2026</time>
+            <div>
+              <h3>2&ndash;1 at home, and the winner nobody saw coming</h3>
+              <p>Behind at half-time, level on the hour, and then a header from the one player who hadn't scored all season.</p>
+            </div>
+            <span class="len">5 min read</span>
+          </a>
+        </li>
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-10-31">31 October 2026</time>
+            <div>
+              <h3>A goalless draw that was better than it sounds</h3>
+              <p>No goals, two disallowed, and a second half played almost entirely in their box.</p>
+            </div>
+            <span class="len">4 min read</span>
+          </a>
+        </li>
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-10-24">24 October 2026</time>
+            <div>
+              <h3>3&ndash;0 away, and a long coach ride home</h3>
+              <p>What went wrong in the first twenty minutes, and why the travelling end sang anyway.</p>
+            </div>
+            <span class="len">6 min read</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="news-politics" class="section category">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="display">News &amp; Politics</h2>
+        <a class="text-link" href="#">All news &amp; politics</a>
+      </div>
+
+      <ul class="posts">
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-11-05">5 November 2026</time>
+            <div>
+              <h3>What the new ticket prices mean for season ticket holders</h3>
+              <p>The numbers behind this year's rise, and who ends up paying most of it.</p>
+            </div>
+            <span class="len">6 min read</span>
+          </a>
+        </li>
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-10-29">29 October 2026</time>
+            <div>
+              <h3>Who owns the club, and why fans should care</h3>
+              <p>A plain guide to the ownership structure, and the questions supporters' groups keep asking.</p>
+            </div>
+            <span class="len">8 min read</span>
+          </a>
+        </li>
+        <li class="post">
+          <a href="#">
+            <time datetime="2026-10-15">15 October 2026</time>
+            <div>
+              <h3>The council vote on match-day parking</h3>
+              <p>What's being proposed, who it affects, and how to have your say before the deadline.</p>
+            </div>
+            <span class="len">5 min read</span>
           </a>
         </li>
       </ul>
