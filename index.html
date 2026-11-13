@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saint Musings</title>
-<meta name="description" content="Saint Musings: Philip Saint's writing on football, the people around it, and whatever comes up on the walk home.">
+<title>Saintly Ponderings</title>
+<meta name="description" content="Saintly Ponderings: Philip Saint's writing on football, the people around it, and whatever comes up on the walk home.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -115,7 +115,7 @@
       radial-gradient(70% 30% at 50% 100%, rgba(245,1,17,.18), transparent 70%),
       var(--ink);
     color: var(--white);
-    padding-bottom: 120px;
+    padding-bottom: var(--s6);
   }
   .grain::before {
     content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
@@ -173,39 +173,6 @@
   .sub-msg:empty { display: none; }
   .sub-msg.ok { color: var(--white); }
   .sub-msg.err { color: #FF6B74; }
-
-  /* ---------- the scarf ---------- */
-  .scarf {
-    position: absolute; z-index: 3; left: -6%; right: -6%; bottom: 44px;
-    height: 46px;
-    transform: rotate(-2.2deg);
-    display: flex; align-items: stretch;
-    animation: scarf-in 1.4s var(--ease-out) .25s both;
-    filter: drop-shadow(0 14px 22px rgba(245,1,17,.28)) drop-shadow(0 2px 4px rgba(0,0,0,.6));
-  }
-  .scarf-body {
-    flex: 1;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.12), transparent 40%, rgba(0,0,0,.18)),
-      repeating-linear-gradient(90deg,
-        var(--red) 0 92px,
-        var(--white) 92px 106px,
-        var(--red) 106px 118px,
-        var(--white) 118px 132px,
-        var(--red) 132px 160px);
-  }
-  .fringe {
-    width: 34px;
-    background: repeating-linear-gradient(90deg, var(--red) 0 3px, transparent 3px 7px);
-    -webkit-mask: linear-gradient(90deg, #000 60%, transparent);
-            mask: linear-gradient(90deg, #000 60%, transparent);
-    margin: 4px 0;
-  }
-  .fringe.left { transform: scaleX(-1); }
-  @keyframes scarf-in {
-    from { transform: translateX(-14%) rotate(-2.2deg); opacity: 0; }
-    to   { transform: translateX(0) rotate(-2.2deg); opacity: 1; }
-  }
 
   /* ---------- writing list (elevated paper layer) ---------- */
   .section { padding: var(--s6) 0; }
@@ -288,9 +255,9 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Saint Musings, back to top">
+    <a class="brand" href="#top" aria-label="Saintly Ponderings, back to top">
       <span class="brand-mark"><img src="brand_assets/psaint_logo.png" alt=""></span>
-      <span class="brand-name">Saint Musings</span>
+      <span class="brand-name">Saintly Ponderings</span>
     </a>
     <nav class="nav-links" aria-label="Main">
       <a class="nav-link" href="#writing">Writing</a>
@@ -305,7 +272,7 @@
     <div class="wrap hero-grid">
       <div>
         <h1 class="display">Thoughts from the walk home.</h1>
-        <p class="hero-lede">Saint Musings is where Philip Saint writes about football, the people around it, and whatever else comes up on the way back from the ground. New pieces go out by email.</p>
+        <p class="hero-lede">Saintly Ponderings is where Philip Saint writes about football, the people around it, and whatever else comes up on the way back from the ground. New pieces go out by email.</p>
 
         <form class="sub-form" novalidate data-sub>
           <label class="sr-only" for="email-hero">Email address</label>
@@ -319,14 +286,8 @@
       </div>
 
       <div class="figure">
-        <img src="brand_assets/psaint_logo.png" alt="Saint Musings logo: a stick figure with a halo, walking, wearing a red and white striped scarf">
+        <img src="brand_assets/psaint_logo.png" alt="Saintly Ponderings logo: a stick figure with a halo, walking, wearing a red and white striped scarf">
       </div>
-    </div>
-
-    <div class="scarf" aria-hidden="true">
-      <span class="fringe left"></span>
-      <span class="scarf-body"></span>
-      <span class="fringe"></span>
     </div>
   </section>
 
@@ -385,9 +346,9 @@
 
   <section id="about" class="section">
     <div class="wrap about">
-      <h2 class="display">About Saint Musings</h2>
+      <h2 class="display">About Saintly Ponderings</h2>
       <div>
-        <p>Saint Musings is Philip Saint's place for writing that doesn't fit in a post or a group chat. Some of it is about football. Most of it starts there and ends up somewhere else.</p>
+        <p>Saintly Ponderings is Philip Saint's place for writing that doesn't fit in a post or a group chat. Some of it is about football. Most of it starts there and ends up somewhere else.</p>
         <p>Pieces come out when they're ready, not on a schedule. Readers write back, argue, and share their own stories, and the best of those find their way into what comes next.</p>
       </div>
     </div>
@@ -411,7 +372,7 @@
 
 <footer>
   <div class="wrap foot">
-    <span>&copy; 2026 Saint Musings</span>
+    <span>&copy; 2026 Saintly Ponderings</span>
     <a href="https://philipsaint.com">philipsaint.com</a>
   </div>
 </footer>
