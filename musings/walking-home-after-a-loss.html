@@ -45,21 +45,25 @@
   .hdr .back-sm:active{opacity:.7}
   @media (min-width:900px){.hdr .back-sm{display:none}}
 
-  .article-head{position:relative;overflow:hidden;color:#fff;padding:56px 0 64px;
-    background:radial-gradient(55% 60% at 15% 0%,rgba(255,255,255,.08),transparent 70%),radial-gradient(70% 40% at 50% 100%,rgba(245,1,17,.2),transparent 70%),#000}
-  @media (min-width:768px){.article-head{padding:88px 0 96px}}
-  .crumb{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.7);transition:transform .35s var(--spring)}
-  .crumb:hover{color:#fff;transform:translateX(-3px)}
+  .sec{padding:56px 0}
+  @media (min-width:768px){.sec{padding:80px 0}}
+  .sec-grey{background:var(--grey-bg)}
+  .article{max-width:46rem;margin:0 auto}
+  .crumb{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--slate);transition:transform .35s var(--spring)}
+  .crumb:hover{color:var(--red);transform:translateX(-3px)}
   .crumb:active{opacity:.7}
-  .article-head h1{margin:20px 0 0;max-width:18ch;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.95;font-size:clamp(2.6rem,7vw,5.2rem)}
-  .standfirst{margin:20px 0 0;max-width:40rem;font-size:clamp(17px,1.8vw,20px);line-height:1.6;color:rgba(255,255,255,.8)}
-  .meta{margin:18px 0 0;font-size:14px;color:rgba(255,255,255,.55)}
+  .sec-title{margin:16px 0 20px;font-family:"Barlow",Arial,sans-serif;font-weight:500;line-height:1.4;font-size:16px;color:var(--red)}
+  .head-text p{margin:0 0 1.15rem;max-width:62ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .standfirst{margin:28px 0 0;max-width:62ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .meta{margin:6px 0 0;font-size:13px;color:#777}
+  .panel{margin-top:20px;background:var(--grey-bg);padding:16px;border-radius:0}
+  @media (min-width:768px){.panel{padding:24px 30px}}
+  .panel .standfirst{margin-top:0}
+  .panel .sec-title{margin:0 0 12px}
+  .head-text + .standfirst{margin-top:28px}
+  .more{display:flex;justify-content:center;margin-top:24px}
 
-  .body{padding:56px 0 72px}
-  @media (min-width:768px){.body{padding:80px 0 96px}}
-  .prose{max-width:38rem}
-  .prose p{margin:0 0 1.2em;font-size:clamp(19px,2vw,22px);line-height:1.7;color:var(--ink)}
-  .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;margin-top:24px;background:var(--red);color:#fff;font-weight:600;font-size:14px;border-radius:6px;box-shadow:0 1px 2px rgba(245,1,17,.25),0 6px 16px -4px rgba(245,1,17,.45);transition:transform .35s var(--spring),opacity .15s}
+  .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;background:var(--red);color:#fff;font-weight:600;font-size:14px;border-radius:6px;box-shadow:0 1px 2px rgba(245,1,17,.25),0 6px 16px -4px rgba(245,1,17,.45);transition:transform .35s var(--spring),opacity .15s}
   .btn:hover{background:var(--red-hover);transform:translateY(-1px)}
   .btn:active{background:var(--red-deep);transform:scale(.97)}
 
@@ -88,23 +92,18 @@
 </header>
 
 <main>
-  <section class="article-head">
-    <div class="wrap">
+  <article class="sec">
+    <div class="wrap article">
       <a href="../#musings" class="crumb">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12H3M9 6l-6 6 6 6"/></svg>
         Musings
       </a>
-      <h1>Walking home after a loss</h1>
-      <p class="standfirst">The quietest crowd you'll ever be part of, and why it's still worth being in it.</p>
-      <p class="meta"><time datetime="2026-10-12">12 October 2026</time> | 7 min read</p>
-    </div>
-  </section>
-
-  <article class="body">
-    <div class="wrap">
-      <div class="prose">
-        <a href="../#musings" class="btn">Back to all musings</a>
+      <div class="panel">
+        <h1 class="sec-title">Walking home after a loss</h1>
+        <p class="standfirst">The quietest crowd you'll ever be part of, and why it's still worth being in it.</p>
+        <p class="meta"><time datetime="2026-10-12">12 October 2026</time> | 7 min read</p>
       </div>
+      <div class="more"><a href="../#musings" class="btn">Back to all musings</a></div>
     </div>
   </article>
 </main>
