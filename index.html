@@ -105,6 +105,8 @@
   @media (min-width:768px){.sec{padding:80px 0}}
   .sec-grey{background:var(--grey-bg)}
   .sec-title{margin:0 0 32px;text-align:center;font-size:clamp(20px,2.6vw,35px);font-weight:300;text-transform:uppercase;color:var(--ink);line-height:1.15}
+  .sec-title--icon{display:flex;align-items:center;justify-content:center;gap:.3em}
+  .sec-title--icon .kicker{width:2.4em;height:2.4em;flex:none;margin:-.5em 0}
   .panel{background:#fff;padding:16px;border-radius:0}
   @media (min-width:768px){.panel{padding:24px 30px}}
   .sec:not(.sec-grey) .panel{background:var(--grey-bg)}
@@ -133,16 +135,6 @@
   @media (min-width:900px){.about{grid-template-columns:.8fr 1.2fr;gap:60px}}
   .about p{margin:0 0 1.15rem;max-width:62ch;font-size:16px;line-height:1.6}
 
-  /* Category cards */
-  .cards{display:grid;gap:22px}
-  @media (min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
-  .card{position:relative;display:block;padding-bottom:22px}
-  .card .img{height:clamp(220px,24vw,300px);border-radius:10px;background:radial-gradient(70% 60% at 100% 0%,rgba(245,1,17,.45),transparent 70%),radial-gradient(50% 50% at 0% 100%,rgba(255,255,255,.08),transparent 70%),#000}
-  .card .bar{position:absolute;left:12px;right:-6px;bottom:0;height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#fff;border-radius:10px;font-size:15px;font-weight:500;color:var(--ink);box-shadow:var(--shadow);transition:transform .35s var(--spring)}
-  .card .bar svg{color:var(--red);transition:transform .35s var(--spring)}
-  .card:hover .bar{transform:translateY(-3px)}
-  .card:hover .bar svg{transform:translateX(4px)}
-  .card:active .bar{transform:scale(.98)}
 
   footer{text-align:center;background:#000;color:rgba(255,255,255,.6);padding:48px 0 36px;font-size:14px}
   footer .links a:hover,footer .social a:hover{color:var(--red)}
@@ -163,9 +155,9 @@
       <span>Saintly Ponderings</span>
     </a>
     <nav aria-label="Main">
-      <a href="#musings">Musings</a>
-      <a href="#match-report">Match Report</a>
+      <a href="#match-report">Match Reports</a>
       <a href="#news-politics">News &amp; Politics</a>
+      <a href="#musings">Musings</a>
       <a href="#about">About</a>
     </nav>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" data-menu-open>
@@ -176,9 +168,9 @@
 
 <div class="subnav">
   <div class="wrap">
-    <a href="#musings">Musings</a>
-    <a href="#match-report">Match Report</a>
+    <a href="#match-report">Match Reports</a>
     <a href="#news-politics">News &amp; Politics</a>
+    <a href="#musings">Musings</a>
     <a href="#about">About</a>
   </div>
 </div>
@@ -196,39 +188,145 @@
     </div>
   </section>
 
-  <section id="musings" class="sec sec-grey">
+  <section id="match-report" class="sec sec-grey">
     <div class="wrap">
-      <h2 class="sec-title">Musings</h2>
+      <h2 class="sec-title sec-title--icon">
+        <svg class="kicker" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+            <!-- halo -->
+            <ellipse cx="50" cy="11" rx="13" ry="4" stroke-width="3"/>
+            <!-- head -->
+            <circle cx="50" cy="27" r="9" stroke-width="3.5"/>
+            <!-- torso, leaning back into the kick -->
+            <path d="M50 36 L44 70" stroke-width="4"/>
+            <!-- arms: one swung forward, one back for balance -->
+            <path d="M48 46 L64 54 L71 49" stroke-width="4"/>
+            <path d="M48 46 L34 56 L27 63" stroke-width="4"/>
+            <!-- standing leg -->
+            <path d="M44 70 L40 90 L34 108 L43 110" stroke-width="4"/>
+            <!-- kicking leg -->
+            <path d="M44 70 L64 80 L84 88" stroke-width="4"/>
+          </g>
+          <!-- hand and foot ends, like the logo -->
+          <circle cx="72" cy="48.5" r="2.6" fill="#000"/>
+          <circle cx="26.5" cy="64" r="2.6" fill="#000"/>
+          <!-- scarf: wrap at the neck and a tail flying back -->
+          <path d="M44 38 Q50 42 56 38" fill="none" stroke="#f50111" stroke-width="6" stroke-linecap="round"/>
+          <path d="M46 40 Q36 37 25 39" fill="none" stroke="#f50111" stroke-width="5.5" stroke-linecap="butt"/>
+          <path d="M46 40 Q36 37 25 39" fill="none" stroke="#fff" stroke-width="5.5" stroke-dasharray="2.5 4" stroke-dashoffset="-2" stroke-linecap="butt"/>
+          <path d="M25 36.5 L19 35 M25 39 L18 39.5 M25 41.5 L19 43.5" stroke="#f50111" stroke-width="1.4" stroke-linecap="round"/>
+          <!-- ball -->
+          <g transform="translate(97 90)">
+            <circle r="9" fill="#fff" stroke="#000" stroke-width="2.5"/>
+            <path d="M0 -3.6 L3.4 -1.1 L2.1 2.9 L-2.1 2.9 L-3.4 -1.1 Z" fill="#000"/>
+            <path d="M0 -3.6 L0 -8.6 M3.4 -1.1 L8.2 -2.6 M2.1 2.9 L5 7 M-2.1 2.9 L-5 7 M-3.4 -1.1 L-8.2 -2.6" stroke="#000" stroke-width="1.4" stroke-linecap="round"/>
+          </g>
+          <!-- impact lines -->
+          <path d="M86 78 L89 73 M92 76 L96 72" stroke="#000" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Match Reports</span>
+      </h2>
       <div class="panel">
-        <a href="#" class="row"><div><h3>What the 89th minute teaches you about patience</h3><p>Nothing has happened for an hour and a half, and still nobody leaves. A short piece on waiting for things that might not come.</p><span class="meta">8 November 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>The same scarf, twenty seasons later</h3><p>On the objects we keep for luck, long after we stop believing they work.</p><span class="meta">27 October 2026 | 4 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>Walking home after a loss</h3><p>The quietest crowd you'll ever be part of, and why it's still worth being in it.</p><span class="meta">12 October 2026 | 7 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="more"><a href="#" class="btn">All musings</a></div>
-    </div>
-  </section>
-
-  <section id="match-report" class="sec">
-    <div class="wrap">
-      <h2 class="sec-title">Match Report</h2>
-      <div class="panel">
-        <a href="#" class="row"><div><h3>2&ndash;1 at home, and the winner nobody saw coming</h3><p>Behind at half-time, level on the hour, and then a header from the one player who hadn't scored all season.</p><span class="meta">7 November 2026 | 5 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>A goalless draw that was better than it sounds</h3><p>No goals, two disallowed, and a second half played almost entirely in their box.</p><span class="meta">31 October 2026 | 4 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>3&ndash;0 away, and a long coach ride home</h3><p>What went wrong in the first twenty minutes, and why the travelling end sang anyway.</p><span class="meta">24 October 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="match-reports/2-1-at-home.html" class="row"><div><h3>2&ndash;1 at home, and the winner nobody saw coming</h3><p>Behind at half-time, level on the hour, and then a header from the one player who hadn't scored all season.</p><span class="meta">7 November 2026 | 5 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="match-reports/goalless-draw.html" class="row"><div><h3>A goalless draw that was better than it sounds</h3><p>No goals, two disallowed, and a second half played almost entirely in their box.</p><span class="meta">31 October 2026 | 4 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="match-reports/3-0-away.html" class="row"><div><h3>3&ndash;0 away, and a long coach ride home</h3><p>What went wrong in the first twenty minutes, and why the travelling end sang anyway.</p><span class="meta">24 October 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
       </div>
       <div class="more"><a href="#" class="btn">All match reports</a></div>
     </div>
   </section>
 
-  <section id="news-politics" class="sec sec-grey">
+  <section id="news-politics" class="sec">
     <div class="wrap">
-      <h2 class="sec-title">News &amp; Politics</h2>
+      <h2 class="sec-title sec-title--icon">
+        <svg class="kicker" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+            <!-- halo -->
+            <ellipse cx="40" cy="11" rx="13" ry="4" stroke-width="3"/>
+            <!-- head -->
+            <circle cx="40" cy="27" r="9" stroke-width="3.5"/>
+            <!-- torso -->
+            <path d="M40 36 L38 72" stroke-width="4"/>
+            <!-- arm holding the megaphone up to the mouth -->
+            <path d="M39 46 L52 52 L58 41" stroke-width="4"/>
+            <!-- other arm raised, fist in the air -->
+            <path d="M39 46 L26 40 L22 27" stroke-width="4"/>
+            <!-- legs planted wide -->
+            <path d="M38 72 L30 92 L24 109 L33 111" stroke-width="4"/>
+            <path d="M38 72 L47 92 L52 109 L61 110" stroke-width="4"/>
+            <!-- sound waves -->
+            <path d="M85 21 Q91 29 85 37" stroke-width="3"/>
+            <path d="M92 15 Q101 29 92 43" stroke-width="3"/>
+            <path d="M99 9 Q111 29 99 49" stroke-width="3"/>
+          </g>
+          <!-- fist -->
+          <circle cx="21.5" cy="25" r="3.2" fill="#000"/>
+          <!-- megaphone: mouthpiece, cone and handle -->
+          <rect x="49" y="25" width="5" height="8" rx="1.5" fill="#000"/>
+          <path d="M53 25.5 L78 15 L78 43 L53 32.5 Z" fill="#000" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+          <ellipse cx="78" cy="29" rx="3" ry="14" fill="#fff" stroke="#000" stroke-width="2.5"/>
+          <path d="M60 33 L59 41" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- scarf: wrap at the neck and a tail flying back -->
+          <path d="M34 38 Q40 42 46 38" fill="none" stroke="#f50111" stroke-width="6" stroke-linecap="round"/>
+          <path d="M36 40 Q26 37 15 39" fill="none" stroke="#f50111" stroke-width="5.5" stroke-linecap="butt"/>
+          <path d="M36 40 Q26 37 15 39" fill="none" stroke="#fff" stroke-width="5.5" stroke-dasharray="2.5 4" stroke-dashoffset="-2" stroke-linecap="butt"/>
+          <path d="M15 36.5 L9 35 M15 39 L8 39.5 M15 41.5 L9 43.5" stroke="#f50111" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span>News &amp; Politics</span>
+      </h2>
       <div class="panel">
-        <a href="#" class="row"><div><h3>What the new ticket prices mean for season ticket holders</h3><p>The numbers behind this year's rise, and who ends up paying most of it.</p><span class="meta">5 November 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>Who owns the club, and why fans should care</h3><p>A plain guide to the ownership structure, and the questions supporters' groups keep asking.</p><span class="meta">29 October 2026 | 8 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="#" class="row"><div><h3>The council vote on match-day parking</h3><p>What's being proposed, who it affects, and how to have your say before the deadline.</p><span class="meta">15 October 2026 | 5 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="news-politics/ticket-prices.html" class="row"><div><h3>What the new ticket prices mean for season ticket holders</h3><p>The numbers behind this year's rise, and who ends up paying most of it.</p><span class="meta">5 November 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="news-politics/who-owns-the-club.html" class="row"><div><h3>Who owns the club, and why fans should care</h3><p>A plain guide to the ownership structure, and the questions supporters' groups keep asking.</p><span class="meta">29 October 2026 | 8 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="news-politics/match-day-parking.html" class="row"><div><h3>The council vote on match-day parking</h3><p>What's being proposed, who it affects, and how to have your say before the deadline.</p><span class="meta">15 October 2026 | 5 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
       </div>
       <div class="more"><a href="#" class="btn">All news &amp; politics</a></div>
+    </div>
+  </section>
+
+  <section id="musings" class="sec sec-grey">
+    <div class="wrap">
+      <h2 class="sec-title sec-title--icon">
+        <svg class="kicker" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+            <!-- halo -->
+            <ellipse cx="44" cy="13" rx="13" ry="4" stroke-width="3"/>
+            <!-- head, tipped forward over the page -->
+            <circle cx="45" cy="29" r="9" stroke-width="3.5"/>
+            <!-- torso, sitting -->
+            <path d="M43 38 L38 74" stroke-width="4"/>
+            <!-- stool -->
+            <path d="M26 76 L50 76" stroke-width="4"/>
+            <path d="M30 76 L27 110 M46 76 L49 110" stroke-width="3"/>
+            <!-- leg tucked under the desk -->
+            <path d="M38 74 L62 76 L63 104 L71 106" stroke-width="4"/>
+            <!-- desk -->
+            <path d="M58 64 L112 64" stroke-width="4.5"/>
+            <path d="M106 64 L106 110" stroke-width="3.5"/>
+            <!-- arm resting on the desk -->
+            <path d="M42 48 L54 60 L66 61" stroke-width="4"/>
+            <!-- writing arm -->
+            <path d="M42 48 L60 52 L78 57" stroke-width="4"/>
+          </g>
+          <!-- notebook on the desk -->
+          <path d="M68 62 L98 62 L94 52 L72 52 Z" fill="#fff" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M83 52 L83 62" stroke="#000" stroke-width="1.5"/>
+          <path d="M74 55.5 Q76 54 78 55.5 T81 55.5 M73.5 58.5 Q75.5 57 77.5 58.5 T80.5 58.5 M86 55.5 L92 55.5" fill="none" stroke="#000" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- hand and pen -->
+          <circle cx="78.5" cy="57" r="2.6" fill="#000"/>
+          <path d="M79 58.5 L86 45" stroke="#f50111" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- scarf: wrap at the neck and a tail flying back -->
+          <path d="M37 40 Q43 44 49 40" fill="none" stroke="#f50111" stroke-width="6" stroke-linecap="round"/>
+          <path d="M39 42 Q29 39 18 41" fill="none" stroke="#f50111" stroke-width="5.5" stroke-linecap="butt"/>
+          <path d="M39 42 Q29 39 18 41" fill="none" stroke="#fff" stroke-width="5.5" stroke-dasharray="2.5 4" stroke-dashoffset="-2" stroke-linecap="butt"/>
+          <path d="M18 38.5 L12 37 M18 41 L11 41.5 M18 43.5 L12 45.5" stroke="#f50111" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span>Musings</span>
+      </h2>
+      <div class="panel">
+        <a href="musings/the-89th-minute.html" class="row"><div><h3>What the 89th minute teaches you about patience</h3><p>Nothing has happened for an hour and a half, and still nobody leaves. A short piece on waiting for things that might not come.</p><span class="meta">8 November 2026 | 6 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="musings/the-same-scarf.html" class="row"><div><h3>The same scarf, twenty seasons later</h3><p>On the objects we keep for luck, long after we stop believing they work.</p><span class="meta">27 October 2026 | 4 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="musings/walking-home-after-a-loss.html" class="row"><div><h3>Walking home after a loss</h3><p>The quietest crowd you'll ever be part of, and why it's still worth being in it.</p><span class="meta">12 October 2026 | 7 min read</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="more"><a href="#" class="btn">All musings</a></div>
     </div>
   </section>
 
@@ -253,17 +351,6 @@
     </div>
   </section>
 
-  <section class="sec">
-    <div class="wrap">
-      <h2 class="sec-title">Explore more ponderings</h2>
-      <div class="cards">
-        <a href="#musings" class="card"><div class="img"></div><div class="bar">Musings<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></div></a>
-        <a href="#match-report" class="card"><div class="img"></div><div class="bar">Match Report<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></div></a>
-        <a href="#news-politics" class="card"><div class="img"></div><div class="bar">News &amp; Politics<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></div></a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer>
@@ -273,7 +360,7 @@
       <span style="font-family:'Big Shoulders Display',Impact,sans-serif;font-size:24px;font-weight:800;color:#fff">Saintly Ponderings</span>
     </a>
     <p style="margin:20px 0 0">&copy; 2026 Saintly Ponderings. All rights reserved.</p>
-    <p class="links" style="margin:6px 0 0"><a href="#musings">Musings</a><span style="margin:0 10px;color:#bbb">|</span><a href="#match-report">Match Report</a><span style="margin:0 10px;color:#bbb">|</span><a href="#news-politics">News &amp; Politics</a><span style="margin:0 10px;color:#bbb">|</span><a href="#about">About</a></p>
+    <p class="links" style="margin:6px 0 0"><a href="#match-report">Match Reports</a><span style="margin:0 10px;color:#bbb">|</span><a href="#news-politics">News &amp; Politics</a><span style="margin:0 10px;color:#bbb">|</span><a href="#musings">Musings</a><span style="margin:0 10px;color:#bbb">|</span><a href="#about">About</a></p>
     <p style="margin:10px 0 0"><a href="https://philipsaint.com/" style="color:var(--red)">philipsaint.com</a></p>
   </div>
 </footer>
@@ -287,9 +374,9 @@
     </button>
   </div>
   <nav>
-    <a href="#musings" data-menu-close>Musings<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
-    <a href="#match-report" data-menu-close>Match Report<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#match-report" data-menu-close>Match Reports<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     <a href="#news-politics" data-menu-close>News &amp; Politics<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
+    <a href="#musings" data-menu-close>Musings<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
     <a href="#about" data-menu-close>About<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></a>
   </nav>
   <div class="drawer-foot">philipsaint.com</div>
