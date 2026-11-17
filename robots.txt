@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.philipsaint.co.uk/sitemap.xml
+Sitemap: https://philipsaint.com/sitemap.xml
