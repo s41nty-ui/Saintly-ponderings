@@ -62,6 +62,8 @@
   .panel .sec-title{margin:0 0 12px}
   .head-text + .standfirst{margin-top:28px}
   .more{display:flex;justify-content:center;margin-top:24px}
+  /* On desktop these paragraphs sit beside the photo on the homepage instead */
+  @media (min-width:900px){.mobile-only{display:none}}
 
   .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;background:var(--dark);color:#fff;font-weight:600;font-size:14px;border-radius:6px;box-shadow:0 1px 2px rgba(58,37,38,.25),0 6px 16px -4px rgba(58,37,38,.4);transition:transform .35s var(--spring),opacity .15s}
   .btn:hover{background:#4d3233;transform:translateY(-1px)}
@@ -101,8 +103,10 @@
       <div class="panel">
         <h1 class="sec-title">Sunderland 1 &ndash; 0 Chelsea</h1>
         <div class="head-text">
-          <p>It felt that way inside the stadium before the game, and it felt like it at full time as Sunderland ran out 1&ndash;0 winners against Xabi Alonso&rsquo;s Chelsea thanks to Enzo Le F&eacute;e&rsquo;s first half penalty.</p>
-          <p>Regis Le Bris made seven changes from the team that lost to Dinamo Zagreb on Thursday, with Thomas Meunier, Nordi Mukiele, Luke O&rsquo;Nien, Reinildo Mandava, Le F&eacute;e, Chemsdine Talbi and Brian Brobbey coming into the starting eleven. A further change was enforced just two minutes in as Granit Xhaka went down injured and was replaced by Jules Ahoka.</p>
+          <p class="mobile-only">It felt that way inside the stadium before the game, and it felt like it at full time as Sunderland ran out 1&ndash;0 winners against Xabi Alonso&rsquo;s Chelsea thanks to Enzo Le F&eacute;e&rsquo;s first half penalty.</p>
+          <p class="mobile-only">Regis Le Bris made seven changes from the team that lost to Dinamo Zagreb on Thursday, with Thomas Meunier, Nordi Mukiele, Luke O&rsquo;Nien, Reinildo Mandava, Le F&eacute;e, Chemsdine Talbi and Brian Brobbey coming into the starting eleven. A further change was enforced just two minutes in as Granit Xhaka went down injured and was replaced by Jules Ahoka.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
         </div>
         <p class="standfirst">Behind at half-time, level on the hour, and then a header from the one player who hadn't scored all season.</p>
         <p class="meta"><time datetime="2026-11-08">8 November 2026</time></p>

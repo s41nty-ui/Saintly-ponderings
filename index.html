@@ -128,6 +128,13 @@
   .row-pic .tint{position:absolute;inset:0;background:var(--red);mix-blend-mode:multiply;opacity:.15}
   .row-pic .fade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.35),transparent 50%)}
   .row:hover .row-pic img{transform:scale(1.03)}
+  .row-feature{display:grid;gap:4px 28px;margin-top:12px}
+  .row-feature .row-pic{margin:0 0 8px}
+  .row-text-h{margin:0 0 10px;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25;color:var(--ink)}
+  .row-text p{margin:0 0 .9em;font-size:15px;line-height:1.6}
+  .row-text p:last-of-type{margin-bottom:0}
+  @media (max-width:899px){.row-text p{display:none}.row-text-h{margin:4px 0 0}}
+  @media (min-width:900px){.row-feature{grid-template-columns:minmax(0,640px) 1fr;align-items:start}.row-feature .row-pic{margin:0}}
 
   /* Photo block */
   .cover{position:relative;overflow:hidden;height:clamp(300px,52vw,560px)}
@@ -201,7 +208,7 @@
         <span>Match Reports</span>
       </h2>
       <div class="panel">
-        <a href="match-reports/2-1-at-home.html" class="row"><div><h3>Sunderland 1 &ndash; 0 Chelsea</h3><div class="row-pic"><img src="brand_assets/enzo%20chelsea.webp" alt="Sunderland player in red and white stripes celebrating, with a Chelsea player behind him" loading="lazy"><span class="tint"></span><span class="fade"></span></div><p>Behind at half-time, level on the hour, and then a header from the one player who hadn't scored all season.</p><span class="meta">8 November 2026</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        <a href="match-reports/2-1-at-home.html" class="row"><div><h3>Sunderland 1 &ndash; 0 Chelsea</h3><div class="row-feature"><div class="row-pic"><img src="brand_assets/enzo%20chelsea.webp" alt="Sunderland player in red and white stripes celebrating, with a Chelsea player behind him" loading="lazy"><span class="tint"></span><span class="fade"></span></div><div class="row-text"><h4 class="row-text-h">Well That Was Fun!</h4><p>It felt that way inside the stadium before the game, and it felt like it at full time as Sunderland ran out 1&ndash;0 winners against Xabi Alonso&rsquo;s Chelsea thanks to Enzo Le F&eacute;e&rsquo;s first half penalty.</p><p>Regis Le Bris made seven changes from the team that lost to Dinamo Zagreb on Thursday, with Thomas Meunier, Nordi Mukiele, Luke O&rsquo;Nien, Reinildo Mandava, Le F&eacute;e, Chemsdine Talbi and Brian Brobbey coming into the starting eleven. A further change was enforced just two minutes in as Granit Xhaka went down injured and was replaced by Jules Ahoka.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
         <a href="match-reports/goalless-draw.html" class="row"><div><h3>A goalless draw that was better than it sounds</h3><p>No goals, two disallowed, and a second half played almost entirely in their box.</p><span class="meta">31 October 2026</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
         <a href="match-reports/3-0-away.html" class="row"><div><h3>3&ndash;0 away, and a long coach ride home</h3><p>What went wrong in the first twenty minutes, and why the travelling end sang anyway.</p><span class="meta">24 October 2026</span></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
       </div>
