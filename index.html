@@ -89,16 +89,16 @@
   /* Aurora: three soft lights drifting behind the hero. Transforms only;
      paused off screen (see script) and still with reduced motion. */
   .aurora{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .aurora span{position:absolute;width:75%;height:75%;border-radius:50%;opacity:.4;
-    animation:aurora 12s ease-in-out infinite;will-change:transform}
+  .aurora span{position:absolute;width:75%;height:75%;border-radius:50%;opacity:.55;
+    animation:aurora 9s ease-in-out infinite;will-change:transform}
   .aurora span:nth-child(1){left:-15%;top:-30%;background:radial-gradient(closest-side,#f50111,transparent)}
-  .aurora span:nth-child(2){left:40%;top:-15%;background:radial-gradient(closest-side,rgba(255,255,255,.55),transparent);animation-duration:16s;animation-delay:-3.6s}
-  .aurora span:nth-child(3){left:10%;top:35%;background:radial-gradient(closest-side,#b5000c,transparent);animation-duration:20s;animation-delay:-7.8s}
+  .aurora span:nth-child(2){left:40%;top:-15%;background:radial-gradient(closest-side,rgba(255,255,255,.55),transparent);animation-duration:12s;animation-delay:-2.7s}
+  .aurora span:nth-child(3){left:10%;top:35%;background:radial-gradient(closest-side,#b5000c,transparent);animation-duration:15s;animation-delay:-5.9s}
   .aurora.is-paused span{animation-play-state:paused}
   @keyframes aurora{
     0%,100%{transform:translate3d(0,0,0) rotate(0deg) scale(1)}
-    33%{transform:translate3d(30%,18%,0) rotate(12deg) scale(1.2)}
-    66%{transform:translate3d(-22%,30%,0) rotate(-8deg) scale(.9)}
+    33%{transform:translate3d(50%,30%,0) rotate(15deg) scale(1.3)}
+    66%{transform:translate3d(-40%,45%,0) rotate(-10deg) scale(.8)}
   }
   @media (prefers-reduced-motion:reduce){.aurora span{animation:none}}
   .hero-grid{position:relative;z-index:1;display:grid;gap:40px;padding-top:64px;align-items:center}
