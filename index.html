@@ -21,7 +21,7 @@
   :root{
     --red:#f50111; --red-hover:#ff1f2e; --red-deep:#b5000c;
     --grey-bg:#f2f2ef; --row-bg:#e7e7e3;
-    --ink:#000; --dark:#3a2526; --ink-soft:#444; --slate:#5e5e5e; --line:rgba(0,0,0,.14);
+    --ink:#000; --dark:#241415; --ink-soft:#444; --slate:#5e5e5e; --line:rgba(0,0,0,.14);
     --shadow:0 3px 20px rgba(0,0,0,.2);
     --spring:cubic-bezier(.34,1.56,.64,1);
     --gutter:15px;
@@ -38,7 +38,7 @@
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
   /* Header */
-  .site-header{position:sticky;top:0;z-index:50;background:rgba(58,37,38,.9);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(36,20,21,.9);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
   .hdr{display:flex;align-items:center;justify-content:space-between;height:52px}
   .brand{display:flex;align-items:center;gap:10px;color:#fff}
   .brand img{width:40px;height:40px;object-fit:cover;object-position:50% 25%;border-radius:8px;mix-blend-mode:lighten}
@@ -96,9 +96,9 @@
             mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 70%,transparent 100%)}
   @media (min-width:900px){.figure{width:100%;max-width:440px;justify-self:end}}
 
-  .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;border:0;cursor:pointer;background:var(--dark);color:#fff;font:600 14px "Barlow",Arial,sans-serif;border-radius:6px;box-shadow:0 1px 2px rgba(58,37,38,.25),0 6px 16px -4px rgba(58,37,38,.4);transition:transform .35s var(--spring),opacity .15s}
-  .btn:hover{background:#4d3233;transform:translateY(-1px)}
-  .btn:active{background:#2a1a1b;transform:scale(.97)}
+  .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;border:0;cursor:pointer;background:var(--dark);color:#fff;font:600 14px "Barlow",Arial,sans-serif;border-radius:6px;box-shadow:0 1px 2px rgba(36,20,21,.25),0 6px 16px -4px rgba(36,20,21,.4);transition:transform .35s var(--spring),opacity .15s}
+  .btn:hover{background:#3a2526;transform:translateY(-1px)}
+  .btn:active{background:#170c0d;transform:scale(.97)}
 
   /* Sections */
   .sec{padding:56px 0}
