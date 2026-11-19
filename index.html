@@ -79,15 +79,9 @@
   /* Hero */
   .hero{position:relative;overflow:hidden;color:#fff;padding-bottom:72px;background:var(--dark)}
   @media (min-width:900px){.hero{padding-bottom:104px}}
-  /* Aurora background: a wide band of repeating slanted stripes that slides sideways (transform only),
-     faded out by a dark radial so it shows mostly towards the top right. Still under reduced motion. */
-  .aurora-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .aurora-bg::before{content:"";position:absolute;top:-50%;bottom:-50%;left:-100%;width:300%;opacity:.55;
-    background-image:repeating-linear-gradient(100deg,#f50111 10%,#ff8a92 15%,#d1000f 20%,#ffd6d9 25%,#b5000c 30%);
-    animation:aurora-slide 16s linear infinite alternate;will-change:transform}
-  .aurora-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 100% 0%,transparent 35%,var(--dark) 85%)}
-  @keyframes aurora-slide{from{transform:translateX(0)}to{transform:translateX(33.333%)}}
-  @media (prefers-reduced-motion:reduce){.aurora-bg::before{animation:none}}
+  /* Matrix Code: binary rain on a canvas behind the hero; see the script at the end of the page */
+  .matrix-code{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--dark)}
+  .matrix-code canvas{position:absolute;inset:0;display:block;width:100%;height:100%}
   .hero-grid{position:relative;z-index:1;display:grid;gap:40px;padding-top:64px;align-items:center}
   @media (min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:64px;padding-top:104px}}
   .hero h1{margin:0;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:700;letter-spacing:-.01em;line-height:.95;font-size:clamp(3.4rem,10vw,7.6rem);color:#fff}
@@ -204,7 +198,7 @@
 
 <main id="top">
   <section class="hero">
-    <div class="aurora-bg" aria-hidden="true"></div>
+    <div class="matrix-code" aria-hidden="true"><canvas></canvas></div>
     <div class="wrap hero-grid">
       <div>
         <h1>Pondering <span style="white-space:nowrap">as we walk</span></h1>
@@ -335,6 +329,52 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && body.classList.contains('menu-open')) setOpen(false);
     });
+  })();
+  // Matrix Code (plain-JS port of the React component): binary rain falling behind the hero.
+  // Confined to the hero (the original filled the whole window), crisp on high-DPI screens,
+  // paused off screen, and a single still frame for people who prefer reduced motion.
+  (function () {
+    var root = document.querySelector('.matrix-code');
+    if (!root) return;
+    var canvas = root.querySelector('canvas'), ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var fontSize = 20, color = '#f50111', characters = '01', fadeOpacity = 0.1, speed = 1;
+    var fade = 'rgba(36, 20, 21, ' + fadeOpacity + ')';   // the site's dark #241415
+    var chars = characters.split(''), drops = [], W = 0, H = 0, timer = null, visible = true;
+    var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function resize() {
+      var b = root.getBoundingClientRect(), ratio = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.max(1, b.width); H = Math.max(1, b.height);
+      canvas.width = Math.round(W * ratio); canvas.height = Math.round(H * ratio);
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      ctx.fillStyle = '#241415'; ctx.fillRect(0, 0, W, H);
+      var count = Math.floor(W / fontSize), old = drops;
+      drops = [];
+      for (var i = 0; i < count; i++) drops[i] = i < old.length ? old[i] : Math.random() * -100;
+    }
+    function draw() {
+      ctx.fillStyle = fade; ctx.fillRect(0, 0, W, H);
+      ctx.fillStyle = color; ctx.font = fontSize + 'px monospace';
+      for (var i = 0; i < drops.length; i++) {
+        ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > H && Math.random() > 0.975) drops[i] = 0;
+        drops[i] += speed;
+      }
+    }
+    function start() { if (timer || reduced || !visible || document.hidden) return; timer = setInterval(draw, 33 / speed); }
+    function stop() { if (!timer) return; clearInterval(timer); timer = null; }
+    function stillFrame() {
+      // run the rain forward invisibly so the still frame shows streams mid-fall
+      for (var i = 0; i < drops.length; i++) drops[i] = Math.random() * (H / fontSize) * 0.6;
+      for (var n = 0; n < 40; n++) draw();
+    }
+
+    resize();
+    if (reduced) stillFrame(); else start();
+    if ('ResizeObserver' in window) new ResizeObserver(function () { resize(); if (reduced) stillFrame(); }).observe(root);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = !!(es[0] && es[0].isIntersecting); if (visible) start(); else stop(); }).observe(root);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
   })();
   // "All match reports" reveals the older reports; pressing again hides them
   document.querySelectorAll('[data-show-all]').forEach(function (btn) {
