@@ -1,7 +1,6 @@
 ---
 title: "Is Suella set for the Liz Truss Circuit?"
 date: 2026-10-15
-section: "UK News & Politics"
 image: "/brand_assets/suella.jpg"
 image_alt: "Satirical puppet of Suella Braverman with long black hair and a white lace dress"
 image_fit: "Fill the frame"

@@ -1,5 +1,6 @@
-# Homepage sections, in page order. "name" must match the Section chosen for each article.
+# Homepage sections, in page order. "collection" is the article folder (without the leading _).
 - name: Match Reports
+  collection: match-reports
   id: match-report
   icon: /brand_assets/match-reports-figure.webp
   grey: true
@@ -8,6 +9,7 @@
   back: Back to all match reports
 
 - name: UK News & Politics
+  collection: news-politics
   id: news-politics
   icon: /brand_assets/Megaphone%20Stick%20Figure%20with%20Scarf.png
   grey: false
@@ -15,6 +17,7 @@
   back: Back to all UK news &amp; politics
 
 - name: Worldwide
+  collection: worldwide
   id: worldwide
   icon: /brand_assets/Globe%20and%20Scarf.png
   grey: true
@@ -22,6 +25,7 @@
   back: Back to all worldwide
 
 - name: Musings
+  collection: musings
   id: musings
   icon: /brand_assets/writing-at-desk.png
   grey: false

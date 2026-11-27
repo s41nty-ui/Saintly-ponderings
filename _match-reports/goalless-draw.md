@@ -1,7 +1,6 @@
 ---
 title: "Sunderland 0 – 2 Dinamo Zagreb"
 date: 2026-11-05
-section: "Match Reports"
 image: "/brand_assets/zagreb.png"
 image_alt: "Scoreboard: Sunderland 0, Dinamo Zagreb 2, full time, UEFA Europa League league stage, Thursday 5 November 2026. Goals from L. Stojković (22nd minute) and D. Beljo (39th minute, assisted by Stojković). Venue Stadium of Light, attendance 44,269."
 image_fit: "Show the whole picture"

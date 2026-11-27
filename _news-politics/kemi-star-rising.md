@@ -1,7 +1,6 @@
 ---
 title: "Kemi’s Star is Rising"
 date: 2026-11-10
-section: "UK News & Politics"
 image: "/brand_assets/Kemi.png"
 image_alt: "Illustrated portrait of Kemi Badenoch on a yellow background"
 image_fit: "Fill the frame"

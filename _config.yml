@@ -1,6 +1,6 @@
 # Site builder settings (GitHub Pages runs Jekyll on this repo).
-# Existing hand-written pages have no front matter, so Jekyll copies them unchanged.
-# The CMS trial lives under /cms-test/ and is built from the files in _articles/.
+# Articles live in one folder per section (_match-reports, _news-politics, _worldwide, _musings)
+# and are edited through Pages CMS (.pages.yml). Each keeps the address /<section>/<file name>.html.
 
 title: Saintly Ponderings
 url: https://philipsaint.com
@@ -10,18 +10,31 @@ kramdown:
   hard_wrap: false
 
 collections:
-  articles:
+  match-reports:
     output: true
-    permalink: /cms-test/:name.html
+    permalink: /match-reports/:name.html
+  news-politics:
+    output: true
+    permalink: /news-politics/:name.html
+  worldwide:
+    output: true
+    permalink: /worldwide/:name.html
+  musings:
+    output: true
+    permalink: /musings/:name.html
 
 defaults:
-  - scope:
-      path: ""
-      type: articles
-    values:
-      layout: cms-article
+  - scope: { path: "", type: match-reports }
+    values: { layout: article }
+  - scope: { path: "", type: news-politics }
+    values: { layout: article }
+  - scope: { path: "", type: worldwide }
+    values: { layout: article }
+  - scope: { path: "", type: musings }
+    values: { layout: article }
 
 exclude:
   - CLAUDE.md
   - "temporary screenshots"
   - node_modules
+  - README.md

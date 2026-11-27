@@ -1,55 +1,18 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://philipsaint.com/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
   </url>
+{%- for s in site.data.sections %}
+{%- for a in site[s.collection] %}
   <url>
-    <loc>https://philipsaint.com/match-reports/jagiellonia.html</loc>
-    <lastmod>2026-11-27</lastmod>
+    <loc>https://philipsaint.com{{ a.url }}</loc>
+    <lastmod>{{ a.date | date: "%Y-%m-%d" }}</lastmod>
   </url>
-  <url>
-    <loc>https://philipsaint.com/match-reports/2-1-at-home.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/match-reports/goalless-draw.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/news-politics/match-day-parking.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/news-politics/ticket-prices.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/news-politics/who-owns-the-club.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/news-politics/kemi-star-rising.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/worldwide/eu-at-war-with-russia.html</loc>
-    <lastmod>2026-11-21</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/worldwide/across-continents.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/worldwide/derby-abroad.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/musings/beer-in-the-stands.html</loc>
-    <lastmod>2026-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://philipsaint.com/musings/the-89th-minute.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
+{%- endfor %}
+{%- endfor %}
 </urlset>

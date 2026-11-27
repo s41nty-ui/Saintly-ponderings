@@ -1,7 +1,6 @@
 ---
 title: "Sunderland 1 – 0 Chelsea"
 date: 2026-11-08
-section: "Match Reports"
 image: "/brand_assets/chelsea10.png"
 image_alt: "Scoreboard: Sunderland 1, Chelsea 0, full time, Premier League, Sunday 8 November 2026. E. Le Fée scored a 36th-minute penalty. Venue Stadium of Light, attendance 46,388."
 image_fit: "Show the whole picture"

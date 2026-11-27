@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -140,8 +142,9 @@
   .row-text-h{margin:0 0 10px;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25;color:var(--ink)}
   .row-text p{margin:0 0 .9em;font-size:15px;line-height:1.6}
   .row-text p:last-of-type{margin-bottom:0}
+  .row-body > .cut{display:none}
   /* Mobile: summaries live in the report box, so rows show only title, photo, heading and date */
-  @media (max-width:899px){.row-text p,.row > div > p{display:none}.row-text-h{margin:4px 0 0}}
+  @media (max-width:899px){.row-text .row-body,.row-text p,.row > div > p{display:none}.row-text-h{margin:4px 0 0}}
   /* Desktop: a row with no overflow text has nothing extra on its report page, so no arrow and no link */
   @media (min-width:900px){.row.no-overflow{pointer-events:none;cursor:default}.row.no-overflow > svg{visibility:hidden}}
   /* Extra rows stay hidden until "All match reports" is pressed */
@@ -220,66 +223,26 @@
     </div>
   </section>
 
-  <section id="match-report" class="sec sec-grey">
+{%- for s in site.data.sections %}
+  <section id="{{ s.id }}" class="sec{% if s.grey %} sec-grey{% endif %}">
     <div class="wrap">
       <h2 class="sec-title sec-title--icon">
-        <img class="kicker kicker-img" src="brand_assets/match-reports-figure.webp" alt="" aria-hidden="true">
-        <span>Match Reports</span>
+        <img class="kicker kicker-img" src="{{ s.icon }}" alt="" aria-hidden="true">
+        <span>{{ s.name | escape }}</span>
       </h2>
-      <p class="sec-sub">Viewed through red &amp; white eyes behind beer goggles</p>
+      {%- if s.sub %}
+      <p class="sec-sub">{{ s.sub }}</p>
+      {%- endif %}
+      {%- assign list = site[s.collection] | sort: "date" | reverse %}
       <div class="panel">
-        <a href="match-reports/jagiellonia.html" class="row"><div><h3>Sunderland 1 &ndash; 1 Jagiellonia Białystok</h3><span class="meta">26 November 2026</span><div class="row-feature"><div class="row-pic" style="background:#181818"><img src="brand_assets/jagiellonia.png" alt="Scoreboard: Sunderland 1, Jagiellonia Białystok 1, full time, UEFA Europa League league stage, Thursday 26 November 2026. Half-time 0–0. T. Tutierov scored in the 47th minute (assisted by E. Le Fée) and K. Jóźwiak equalised in the 52nd. Venue Stadium of Light, attendance 37,658." loading="lazy" style="object-fit:contain;object-position:50% 50%"></div><div class="row-text"><h4 class="row-text-h">Brrr!</h4><p>Brr tt’s cold! I was thinking of excuses to bunk off but was offered a lift to the ground.</p><p>We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.</p><p>The pub was nice, had a couple of pints, then walked to the ground, relatively sober.</p><p>Sunderland obviously have to rotate their squad a bit and fielded a relatively weakened side. This does give players not regularly in the first team a chance to shine, but not sure any did.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="match-reports/2-1-at-home.html" class="row"><div><h3>Sunderland 1 &ndash; 0 Chelsea</h3><span class="meta">8 November 2026</span><div class="row-feature"><div class="row-pic" style="background:#181818"><img src="brand_assets/chelsea10.png" alt="Scoreboard: Sunderland 1, Chelsea 0, full time, Premier League, Sunday 8 November 2026. E. Le Fée scored a 36th-minute penalty. Venue Stadium of Light, attendance 46,388." loading="lazy" style="object-fit:contain;object-position:50% 50%"></div><div class="row-text"><h4 class="row-text-h">Well That Was Fun!</h4><p>My brother had stayed up North for this one and there was something special in the air as we set off for the match.</p><p>It might be down to the whiskey in our morning coffee, but we were in a very positive frame of mind and convinced a win was on the cards, after our deal with a Croatian devil.</p><p>Quick pint in the local then we jumped on to the bus to go to Sunderland, and sitting on the bus larger than life was big Andy. We just knew it was going to be a good day. Andy’s last match for a while as he is returning to foreign climes, and he was in great form.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="match-reports/goalless-draw.html" class="row"><div><h3>Sunderland 0 &ndash; 2 Dinamo Zagreb</h3><span class="meta">5 November 2026</span><div class="row-feature"><div class="row-pic" style="background:#181818"><img src="brand_assets/zagreb.png" alt="Scoreboard: Sunderland 0, Dinamo Zagreb 2, full time, UEFA Europa League league stage, Thursday 5 November 2026. Goals from L. Stojković (22nd minute) and D. Beljo (39th minute, assisted by Stojković). Venue Stadium of Light, attendance 44,269." loading="lazy" style="object-fit:contain;object-position:50% 50%"></div><div class="row-text"><h4 class="row-text-h">Booze not Boos!</h4><p>My brother was up for his first ever European game and we were both very excited. There were a bunch of black clad Zagreb fans on the metro and we had a nice chat. They were not too optimistic and one offered us a deal - Zagreb beat Sunderland, Sunderland beat Chelsea. I was happy with that and impressed he knew our fixtures. Power of the Premier League I suppose. Still not used to being in the top flight.</p><p>Our new friends left to join more young men dressed in black, and we headed to the pub. It was great fun in the pub, as usual, then many beers later we were off to the ground.</p><p>The bridge to the ground, the lights, the music.. It’s quite something.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
+        {%- for a in list %}
+        {% include article-row.html a=a %}
+        {%- endfor %}
       </div>
-      <div class="more"><button type="button" class="btn" data-show-all aria-expanded="false">All match reports</button></div>
+      <div class="more"><button type="button" class="btn" data-show-all aria-expanded="false">{{ s.all }}</button></div>
     </div>
   </section>
-
-  <section id="news-politics" class="sec">
-    <div class="wrap">
-      <h2 class="sec-title sec-title--icon">
-        <img class="kicker kicker-img" src="brand_assets/Megaphone%20Stick%20Figure%20with%20Scarf.png" alt="" aria-hidden="true">
-        <span>UK News &amp; Politics</span>
-      </h2>
-      <div class="panel">
-        <a href="news-politics/kemi-star-rising.html" class="row"><div><h3>Kemi’s Star is Rising</h3><span class="meta">10 November 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/Kemi.png" alt="Illustrated portrait of Kemi Badenoch on a yellow background" loading="lazy" style="object-position:50% 25%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"><h4 class="row-text-h">Tough cookie Kemi</h4><p>Kemi Badenoch is getting more popular according to the polls, and certainly more popular than the waning party she leads, although a recovery is possible if Reform continues to falter.</p><p>The flirting with Andy seems to be over (was I the only one to notice that?) and she seems a bit more sure-footed and comfortable as leader.</p><p>Her takedown of Reform at the Tory party conference was impressive – <strong>They are not like us, we are not like them</strong>. It was quite powerful.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="news-politics/who-owns-the-club.html" class="row no-overflow"><div><h3>Nigel’s Star is Fading</h3><span class="meta">4 November 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/nigel.jpg" alt="Satirical puppet of Nigel Farage grinning and holding up a pint of stout in a pub" loading="lazy" style="object-position:50% 30%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"><h4 class="row-text-h">Man of the People, my arse</h4></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="news-politics/ticket-prices.html" class="row no-overflow"><div><h3>Andy Burnham – Benign or Bold?</h3><span class="meta">29 October 2026</span><div class="row-feature"><div class="row-pic" style="background:#e5133f"><img src="brand_assets/andy.jpg" alt="Illustrated caricature of Andy Burnham on a red background" loading="lazy" style="object-fit:contain;object-position:50% 50%"><span class="fade"></span></div><div class="row-text"><h4 class="row-text-h">Ah, isn’t he lovely?</h4></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="news-politics/match-day-parking.html" class="row no-overflow"><div><h3>Is Suella set for the Liz Truss Circuit?</h3><span class="meta">15 October 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/suella.jpg" alt="Satirical puppet of Suella Braverman with long black hair and a white lace dress" loading="lazy" style="object-position:50% 8%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"><p>What's being proposed, who it affects, and how to have your say before the deadline.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="more"><button type="button" class="btn" data-show-all aria-expanded="false">All UK news &amp; politics</button></div>
-    </div>
-  </section>
-
-  <section id="worldwide" class="sec sec-grey">
-    <div class="wrap">
-      <h2 class="sec-title sec-title--icon">
-        <img class="kicker kicker-img" src="brand_assets/Globe%20and%20Scarf.png" alt="" aria-hidden="true">
-        <span>Worldwide</span>
-      </h2>
-      <div class="panel">
-        <a href="worldwide/eu-at-war-with-russia.html" class="row no-overflow"><div><h3>Is the EU at War with Russia?</h3><span class="meta">21 November 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/eu-russia.jpg" alt="Painted EU, Ukrainian and Russian flags on a cracked wall" loading="lazy"><span class="tint"></span><span class="fade"></span></div><div class="row-text"></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="worldwide/across-continents.html" class="row no-overflow"><div><h3>Donald gets a Bloody Nose</h3><span class="meta">1 November 2026</span><div class="row-feature"><div class="row-pic" style="background:linear-gradient(to bottom,#2e0058 0%,#2d015a 56%,#230044 80%,#06000e 100%)"><img src="brand_assets/midterms.jpg" alt="US midterm election results: Democrats win the Senate 56 seats to 44 (Democrats up 9) and win the House 257 seats to 172 (Democrats up 43), with 429 of 435 House seats counted." loading="lazy" style="object-fit:contain;object-position:50% 50%"></div><div class="row-text"></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="worldwide/derby-abroad.html" class="row no-overflow"><div><h3>Trying to Unravel the Israeli Election</h3><span class="meta">20 October 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/israeli-election.png" alt="Side-by-side portraits of two Israeli political leaders" loading="lazy" style="object-position:50% 30%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="more"><button type="button" class="btn" data-show-all aria-expanded="false">All worldwide</button></div>
-    </div>
-  </section>
-
-  <section id="musings" class="sec">
-    <div class="wrap">
-      <h2 class="sec-title sec-title--icon">
-        <img class="kicker kicker-img" src="brand_assets/writing-at-desk.png" alt="" aria-hidden="true">
-        <span>Musings</span>
-      </h2>
-      <div class="panel">
-        <a href="musings/beer-in-the-stands.html" class="row no-overflow"><div><h3>Beer in the Stands! OMG</h3><span class="meta">20 November 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/beer-in-the-stands.jpg" alt="Crowd of football fans cheering with arms raised as beer flies through the air" loading="lazy" style="object-position:50% 35%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"><h4 class="row-text-h">This isn’t cricket!</h4><p>What is Andy Burnham thinking?</p><p>If drink is ever allowed in the stands I suggest you invest in your local dry cleaners, if you have any spare cash.</p><p>The constant comings and goings to the toilet and bar will also cause a wee bit of friction. You get grumbling now when you stagger back to your seat after a half-time pint.</p><p>As for my beer limit, it would be easily exceeded and then anything can happen.</p></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-        <a href="musings/the-89th-minute.html" class="row no-overflow"><div><h3>Should there be a Wealth Tax for the Super Rich?</h3><span class="meta">8 November 2026</span><div class="row-feature"><div class="row-pic"><img src="brand_assets/tax-the-rich.jpg" alt="Street mural painted with bright flowers and the words Tax the Rich, with two people at its base" loading="lazy" style="object-position:50% 20%"><span class="tint"></span><span class="fade"></span></div><div class="row-text"></div></div></div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M15 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="more"><button type="button" class="btn" data-show-all aria-expanded="false">All musings</button></div>
-    </div>
-  </section>
+{% endfor %}
 
   <section class="sec">
     <div class="wrap">
@@ -412,9 +375,12 @@
       var open = panel.classList.toggle('show-all');
       btn.setAttribute('aria-expanded', String(open));
       btn.textContent = open ? 'Show fewer' : label;
+      if (window.SPLayoutRows) SPLayoutRows();
       if (!open) panel.scrollIntoView({ block: 'start' });
     });
   });
 </script>
+<script src="/assets/fit.js"></script>
+<script>SPWhenReady(SPLayoutRows);</script>
 </body>
 </html>

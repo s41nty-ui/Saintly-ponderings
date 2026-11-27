@@ -1,17 +1,19 @@
 <!doctype html>
+{%- assign s = site.data.sections | where: "collection", page.collection | first -%}
+{%- assign whole = false -%}{%- if page.image_fit contains "whole" -%}{%- assign whole = true -%}{%- endif -%}
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kemi’s Star is Rising | Saintly Ponderings</title>
-<meta name="description" content="UK news and politics, 10 November 2026: Kemi Badenoch is getting more popular according to the polls, and certainly more popular than the party she leads.">
-<link rel="canonical" href="https://philipsaint.com/news-politics/kemi-star-rising.html">
+<title>{{ page.title | escape }} | Saintly Ponderings</title>
+<meta name="description" content="{{ page.content | strip_html | normalize_whitespace | truncate: 155 | default: page.title | escape }}">
+<link rel="canonical" href="https://philipsaint.com{{ page.url }}">
 <link rel="icon" type="image/png" href="/brand_assets/psaint_logo.png">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Saintly Ponderings">
-<meta property="og:title" content="Kemi’s Star is Rising">
-<meta property="og:url" content="https://philipsaint.com/news-politics/kemi-star-rising.html">
-<meta property="og:image" content="https://philipsaint.com/brand_assets/solpic.jpg">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:url" content="https://philipsaint.com{{ page.url }}">
+<meta property="og:image" content="https://philipsaint.com{% if page.image and page.image != '' %}{{ page.image }}{% else %}/brand_assets/solpic.jpg{% endif %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -53,18 +55,28 @@
   .crumb:hover{color:var(--red);transform:translateX(-3px)}
   .crumb:active{opacity:.7}
   .sec-title{margin:16px 0 20px;font-family:"Barlow",Arial,sans-serif;font-weight:500;line-height:1.4;font-size:16px;color:var(--red)}
-  .head-text p{margin:0 0 1.15rem;max-width:62ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
-  .standfirst{margin:28px 0 0;max-width:62ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
+  .head-text > *{margin:0 0 1.15rem;max-width:62ch;font-size:16px;line-height:1.6;color:var(--ink-soft)}
   .meta{margin:6px 0 0;font-size:13px;color:#777}
-  .panel{margin-top:20px;background:#fff;padding:16px;border-radius:0}
+  .panel{margin-top:20px;background:{% if s.grey %}#fff{% else %}var(--grey-bg){% endif %};padding:16px;border-radius:0}
   @media (min-width:768px){.panel{padding:24px 30px}}
-  .panel .standfirst{margin-top:0}
   .panel .sec-title{margin:0 0 12px}
-  .head-text + .standfirst{margin-top:28px}
   .more{display:flex;justify-content:center;margin-top:24px}
-  /* On desktop this text already shows on the homepage, so the box stays empty */
-  @media (min-width:900px){.mobile-only{display:none}
+  /* Desktop: paragraphs already shown beside the photo on the homepage are skipped here (see fit.js) */
+  @media (min-width:900px){.mobile-only,.head-text > .on-home{display:none}
     .panel .sec-title{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+  /* Invisible copy of the homepage row layout, used only to measure what fits beside the photo */
+  .fit-probe{position:absolute;left:0;top:0;width:100%;visibility:hidden;pointer-events:none;z-index:-1}
+  .fit-probe .wrap{max-width:1305px}
+  .fit-probe .fp-panel{padding:16px}
+  @media (min-width:768px){.fit-probe .fp-panel{padding:24px 30px}}
+  .fit-probe .fp-row{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:16px 18px}
+  .fit-probe .row-feature{display:grid;gap:4px 28px}
+  @media (min-width:900px){.fit-probe .row-feature{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+  .fit-probe .row-pic{max-width:640px;aspect-ratio:16/9}
+  .fit-probe .row-text-h{margin:0 0 10px;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25}
+  .fit-probe .row-text p{margin:0 0 .9em;font-size:15px;line-height:1.6}
+  .fit-probe .row-text p:last-of-type{margin-bottom:0}
 
   .btn{display:inline-grid;place-items:center;height:44px;padding:0 22px;background:var(--dark);color:#fff;font-weight:600;font-size:14px;border-radius:6px;box-shadow:0 1px 2px rgba(36,20,21,.25),0 6px 16px -4px rgba(36,20,21,.4);transition:transform .35s var(--spring),opacity .15s}
   .btn:hover{background:#3a2526;transform:translateY(-1px)}
@@ -80,44 +92,35 @@
 
 <header class="site-header">
   <div class="wrap hdr">
-    <a href="../" class="brand" aria-label="Saintly Ponderings home">
-      <img src="../brand_assets/psaint_logo.png" alt="">
+    <a href="/" class="brand" aria-label="Saintly Ponderings home">
+      <img src="/brand_assets/psaint_logo.png" alt="">
       <span>Saintly Ponderings</span>
     </a>
     <nav aria-label="Main">
-      <a href="../#match-report">Match Reports</a>
-      <a href="../#news-politics">UK News &amp; Politics</a>
-      <a href="../#worldwide">Worldwide</a>
-      <a href="../#musings">Musings</a>
-      <a href="../#about">About</a>
+      {%- for x in site.data.sections %}
+      <a href="/#{{ x.id }}">{{ x.name | escape }}</a>
+      {%- endfor %}
+      <a href="/#about">About</a>
     </nav>
-    <a href="../#news-politics" class="back-sm">All UK news &amp; politics</a>
+    <a href="/#{{ s.id }}" class="back-sm">{{ s.all }}</a>
   </div>
 </header>
 
 <main>
-  <article class="sec sec-grey">
+  <article class="sec{% if s.grey %} sec-grey{% endif %}">
     <div class="wrap article">
-      <a href="../#news-politics" class="crumb">
+      <a href="/#{{ s.id }}" class="crumb">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12H3M9 6l-6 6 6 6"/></svg>
-        UK News &amp; Politics
+        {{ s.name | escape }}
       </a>
       <div class="panel">
-        <h1 class="sec-title">Kemi’s Star is Rising</h1>
+        <h1 class="sec-title">{{ page.title | escape }}</h1>
         <div class="head-text">
-          <p class="mobile-only">Kemi Badenoch is getting more popular according to the polls, and certainly more popular than the waning party she leads, although a recovery is possible if Reform continues to falter.</p>
-          <p class="mobile-only">The flirting with Andy seems to be over (was I the only one to notice that?) and she seems a bit more sure-footed and comfortable as leader.</p>
-          <p class="mobile-only">Her takedown of Reform at the Tory party conference was impressive – <strong>They are not like us, we are not like them</strong>. It was quite powerful.</p>
-          <p>However she followed up later talking about how when John Barnes and Ian Wright played for England, their Englishness was not questioned.<br>The savage racism that rained down from the terraces and bananas thrown at John Barnes was not questioning his Englishness, but whether or not he was indeed human. Bleak moments.</p>
-          <p>Attempts by politicians to appeal to the masses by referencing football never seem to quite land, for some reason.</p>
-          <p>Kemi is still finding her way and struggled when defining Tory defence strategy, rambling a little incoherently about a defensive dome which sounded very like being in Nato. Not a bad idea.</p>
-          <p>But Kemi is still intent on playing hardball and not buying into Andy Burnham’s attempt to make party politics more collaborative and productive.<br>She asserts that cross-party collaboration is only possible when Labour propose something sensible, which emphatically means cutting benefits.</p>
-          <p>Until then Kemi is sticking with the status quo, arguing black is white, regardless of facts or what may be best for the country. She would disagree.</p>
-          <p>Remember Andy, Kemi is a Toughie, not a Toffee.</p>
+{{ content }}
         </div>
-        <p class="meta mobile-only"><time datetime="2026-11-10">10 November 2026</time></p>
+        <p class="meta mobile-only"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
       </div>
-      <div class="more"><a href="../#news-politics" class="btn">Back to all UK news &amp; politics</a></div>
+      <div class="more"><a href="/#{{ s.id }}" class="btn">{{ s.back }}</a></div>
     </div>
   </article>
 </main>
@@ -125,9 +128,13 @@
 <footer>
   <div class="wrap">
     <p style="margin:0">&copy; 2026 Saintly Ponderings. All rights reserved.</p>
-    <p style="margin:10px 0 0"><a href="../" style="color:var(--red)">philipsaint.com</a></p>
+    <p style="margin:10px 0 0"><a href="/" style="color:var(--red)">philipsaint.com</a></p>
   </div>
 </footer>
 
+<div class="fit-probe" aria-hidden="true"><div class="wrap"><div class="fp-panel"><div class="fp-row"><div><div class="row-feature">{% if page.image and page.image != "" %}<div class="row-pic"></div>{% endif %}<div class="row-text">{% if page.heading and page.heading != "" %}<h4 class="row-text-h">{{ page.heading | escape }}</h4>{% endif %}<div class="row-body">{{ content }}</div></div></div></div><svg width="20" height="20"></svg></div></div></div></div>
+
+<script src="/assets/fit.js"></script>
+<script>SPWhenReady(SPLayoutArticle);</script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+# After an article is added or edited (e.g. through Pages CMS), tell search engines via IndexNow.
+# Waits for GitHub Pages to publish first, so crawlers see the new version.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_match-reports/**"
+      - "_news-politics/**"
+      - "_worldwide/**"
+      - "_musings/**"
+      - "index.html"
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Work out which pages changed
+        id: urls
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then range="$BEFORE..$AFTER"; else range="$AFTER~1..$AFTER"; fi
+          urls="https://philipsaint.com/"
+          for f in $(git diff --name-only --diff-filter=AM "$range" -- '_match-reports/*.md' '_news-politics/*.md' '_worldwide/*.md' '_musings/*.md'); do
+            section=$(dirname "$f" | sed 's#^_##'); name=$(basename "$f" .md)
+            urls="$urls https://philipsaint.com/$section/$name.html"
+          done
+          echo "list=$urls" >> "$GITHUB_OUTPUT"
+          echo "Pages to notify: $urls"
+
+      - name: Wait for the site to publish
+        run: |
+          sleep 90
+          for u in ${{ steps.urls.outputs.list }}; do
+            for i in $(seq 1 20); do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$u?v=$RANDOM")
+              [ "$code" = "200" ] && break
+              sleep 15
+            done
+            echo "$u -> $code"
+          done
+
+      - name: Send IndexNow notification
+        run: |
+          list=$(printf '%s\n' ${{ steps.urls.outputs.list }} | jq -R . | jq -s .)
+          body=$(jq -n --argjson urls "$list" '{host:"philipsaint.com", key:"a5a6fdaa70055e3f51d2da7b904e1ccd", keyLocation:"https://philipsaint.com/a5a6fdaa70055e3f51d2da7b904e1ccd.txt", urlList:$urls}')
+          echo "$body"
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$body")
+          echo "IndexNow response: $code"
+          [ "$code" = "200" ] || [ "$code" = "202" ]

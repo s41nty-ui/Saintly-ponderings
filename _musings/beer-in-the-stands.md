@@ -1,7 +1,6 @@
 ---
 title: "Beer in the Stands! OMG"
 date: 2026-11-20
-section: "Musings"
 image: "/brand_assets/beer-in-the-stands.jpg"
 image_alt: "Crowd of football fans cheering with arms raised as beer flies through the air"
 image_fit: "Fill the frame"

@@ -1,7 +1,6 @@
 ---
 title: Sunderland 1 – 1 Jagiellonia Białystok
 date: 2026-11-26
-section: Match Reports
 image: /brand_assets/jagiellonia.png
 image_alt: "Scoreboard: Sunderland 1, Jagiellonia Białystok 1, full time, UEFA
   Europa League league stage, Thursday 26 November 2026. Half-time 0–0. T.
