@@ -1,16 +1,18 @@
 ---
-title: "Sunderland 1 – 1 Jagiellonia Białystok"
+title: Sunderland 1 – 1 Jagiellonia Białystok
 date: 2026-11-26
-section: "Match Reports"
-image: "/brand_assets/jagiellonia.png"
-image_alt: "Scoreboard: Sunderland 1, Jagiellonia Białystok 1, full time, UEFA Europa League league stage, Thursday 26 November 2026. Half-time 0–0. T. Tutierov scored in the 47th minute (assisted by E. Le Fée) and K. Jóźwiak equalised in the 52nd. Venue Stadium of Light, attendance 37,658."
-image_fit: "Show the whole picture"
-image_position: "50% 50%"
+section: Match Reports
+image: /brand_assets/jagiellonia.png
+image_alt: "Scoreboard: Sunderland 1, Jagiellonia Białystok 1, full time, UEFA
+  Europa League league stage, Thursday 26 November 2026. Half-time 0–0. T.
+  Tutierov scored in the 47th minute (assisted by E. Le Fée) and K. Jóźwiak
+  equalised in the 52nd. Venue Stadium of Light, attendance 37,658."
+image_fit: Show the whole picture
+heading: Brrr!
+image_position: 50% 50%
 image_background: "#181818"
-heading: "Brrr!"
 ---
-
-Brr tt’s cold! I was thinking of excuses to bunk off but was offered a lift to the ground.
+Brr it’s cold! I was thinking of excuses to bunk off but was offered a lift to the ground.
 
 We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.
 
