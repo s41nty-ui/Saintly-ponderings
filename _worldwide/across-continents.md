@@ -10,4 +10,4 @@ heading: But what does it actually mean?
 image_position: 50% 50%
 image_background: linear-gradient(to bottom,#2e0058 0%,#2d015a 56%,#230044 80%,#06000e 100%)
 ---
-Will the Democrats go on an Impeachment rampage, and risk being viewed as vindictive and not focussing on the issues that matter to people? Maybe note, but surely they'll impeach a few, Hegseth for one. I've already got the popcorn ready.
+Will the Democrats go on an Impeachment rampage, and risk being viewed as vindictive and not focussing on the issues that matter to people? Maybe not, but surely they'll impeach a few, Hegseth for one. I've already got the popcorn ready.
