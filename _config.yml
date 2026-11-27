@@ -1,0 +1,27 @@
+# Site builder settings (GitHub Pages runs Jekyll on this repo).
+# Existing hand-written pages have no front matter, so Jekyll copies them unchanged.
+# The CMS trial lives under /cms-test/ and is built from the files in _articles/.
+
+title: Saintly Ponderings
+url: https://philipsaint.com
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  articles:
+    output: true
+    permalink: /cms-test/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: cms-article
+
+exclude:
+  - CLAUDE.md
+  - "temporary screenshots"
+  - node_modules

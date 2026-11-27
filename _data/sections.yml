@@ -1,0 +1,29 @@
+# Homepage sections, in page order. "name" must match the Section chosen for each article.
+- name: Match Reports
+  id: match-report
+  icon: /brand_assets/match-reports-figure.webp
+  grey: true
+  sub: Viewed through red &amp; white eyes behind beer goggles
+  all: All match reports
+  back: Back to all match reports
+
+- name: UK News & Politics
+  id: news-politics
+  icon: /brand_assets/Megaphone%20Stick%20Figure%20with%20Scarf.png
+  grey: false
+  all: All UK news &amp; politics
+  back: Back to all UK news &amp; politics
+
+- name: Worldwide
+  id: worldwide
+  icon: /brand_assets/Globe%20and%20Scarf.png
+  grey: true
+  all: All worldwide
+  back: Back to all worldwide
+
+- name: Musings
+  id: musings
+  icon: /brand_assets/writing-at-desk.png
+  grey: false
+  all: All musings
+  back: Back to all musings

@@ -1,0 +1,60 @@
+# Pages CMS (https://app.pagescms.org) editor setup for Saintly Ponderings.
+media:
+  input: brand_assets
+  output: /brand_assets
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: _articles
+    filename: "{primary}.md"
+    view:
+      fields: [title, section, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: section
+        label: Section
+        type: select
+        required: true
+        options:
+          values: ["Match Reports", "UK News & Politics", "Worldwide", "Musings"]
+      - name: image
+        label: Picture
+        type: image
+      - name: image_alt
+        label: Picture description (for screen readers and Google)
+        type: string
+      - name: image_fit
+        label: Picture fit
+        type: select
+        default: "Fill the frame"
+        options:
+          values: ["Fill the frame", "Show the whole picture"]
+      - name: heading
+        label: Heading beside the picture
+        type: string
+      - name: body
+        label: Text
+        type: rich-text
+      - name: image_position
+        label: "Advanced: picture position"
+        description: "Which part of the picture to keep when it is cropped, e.g. 50% 30% (across, down). Leave as is if unsure."
+        type: string
+        default: "62% 30%"
+      - name: image_background
+        label: "Advanced: colour behind the picture"
+        description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
+        type: string
