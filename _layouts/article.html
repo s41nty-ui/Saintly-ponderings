@@ -63,15 +63,7 @@
   .more{display:flex;justify-content:center;margin-top:24px}
   /* Desktop: paragraphs already shown beside the photo on the homepage are skipped here (see fit.js) */
   @media (min-width:900px){.mobile-only,.head-text > .on-home{display:none}
-    .panel:not(.all-on-home) .sec-title{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-    .panel.all-on-home .sec-title{margin:0}}
-
-  /* Comments (Disqus): loaded only when the reader asks, so no cookies or adverts before then */
-  .comments{margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
-  .comments-h{margin:0 0 6px;font-size:20px;font-weight:500;color:var(--ink)}
-  .comments-note{margin:0 0 16px;font-size:13px;color:#777}
-  .comments .btn{border:0;cursor:pointer;font-family:inherit}
-  .comments .btn:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+    .panel .sec-title{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 
   /* Invisible copy of the homepage row layout, used only to measure what fits beside the photo */
   .fit-probe{position:absolute;left:0;top:0;width:100%;visibility:hidden;pointer-events:none;z-index:-1}
@@ -128,12 +120,6 @@
         </div>
         <p class="meta mobile-only"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
       </div>
-      <section class="comments" aria-labelledby="comments-h">
-        <h2 class="comments-h" id="comments-h">Comments</h2>
-        <p class="comments-note">Comments are provided by Disqus, which uses cookies and shows adverts.</p>
-        <button type="button" class="btn" id="show-comments">Show comments</button>
-        <div id="disqus_thread"></div>
-      </section>
       <div class="more"><a href="/#{{ s.id }}" class="btn">{{ s.back | escape }}</a></div>
     </div>
   </article>
@@ -150,19 +136,5 @@
 
 <script src="/assets/fit.js"></script>
 <script>SPWhenReady(SPLayoutArticle);</script>
-<script>
-  // Disqus comments: one thread per article address; loaded only when the reader clicks.
-  var disqus_config = function () {
-    this.page.url = 'https://philipsaint.com{{ page.url }}';
-    this.page.identifier = '{{ page.url }}';
-  };
-  document.getElementById('show-comments').addEventListener('click', function () {
-    this.remove();
-    var s = document.createElement('script');
-    s.src = 'https://saintly-ponderings.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (document.head || document.body).appendChild(s);
-  });
-</script>
 </body>
 </html>
