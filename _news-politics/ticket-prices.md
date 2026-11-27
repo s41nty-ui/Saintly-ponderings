@@ -8,9 +8,9 @@ heading: Ah, isn’t he lovely?
 image_position: 50% 50%
 image_background: "#e5133f"
 ---
-The budget was quite benign, and didnt seem to upset anyone important, but is there some steel behind our friendly Northerner (more West Midlands if you ask me),
+The budget was quite benign, and didnt seem to upset anyone important, but is there some steel behind our friendly Northerner (more West Midlands if you ask me)?
 
-He's proposing helping young people into work to to get them off benefits. Radical stuff! He'll be suggesting a Wealth Tax next!
+He's proposing helping young people into work to to get them off benefits. Radical stuff. He'll be suggesting a Wealth Tax next!
 
 Then there is the cherry picking our way closer to Europe. Choosing from the  à la carte menu, some might say. Michael Barnier (Brexit negotiator) says we can't, but what does he know?
 
