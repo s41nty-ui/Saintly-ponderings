@@ -28,7 +28,7 @@
     var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(run, 150); });
   }
 
-  // Homepage: hide what doesn't fit; rows with nothing more to read lose their arrow and link (desktop).
+  // Homepage: hide what doesn't fit beside the photo (desktop).
   window.SPLayoutRows = function () {
     if (!matchMedia(DESKTOP).matches) return;
     document.querySelectorAll('a.row').forEach(function (row) {
@@ -38,7 +38,7 @@
       blocks.forEach(function (b) { b.classList.remove('cut'); });
       var n = fitCount(feature);
       for (var i = n; i < blocks.length; i++) blocks[i].classList.add('cut');
-      row.classList.toggle('no-overflow', n >= blocks.length);
+      // Every row stays clickable: each article page has comments, even when all its text fits here.
     });
   };
 
@@ -50,6 +50,9 @@
     shown.forEach(function (b) { b.classList.remove('on-home'); });
     var n = fitCount(probe.querySelector('.row-feature'));
     for (var i = 0; i < n && i < shown.length; i++) shown[i].classList.add('on-home');
+    // Nothing left to read here on desktop: show the title so readers know which article the comments are for
+    var panel = document.querySelector('.panel');
+    if (panel) panel.classList.toggle('all-on-home', n >= shown.length);
   };
 
   window.SPWhenReady = whenReady;
