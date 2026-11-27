@@ -21,7 +21,7 @@ Sunderland obviously have to rotate their squad a bit and fielded a relatively w
 
 There was a bit of excitement when Polish fans revealed themselves in the North Stand and seemed to be making Nazi salutes. Apparently a few older chaps clipped a few of them and I have seen a video of one toppling down the steps. Police and stewards got them out without too much incident and no one seemed too bothered. These foreign fans are very weird,
 
-The first half was fairly laboured and disjointed, but felt we had the better chances against fairly ordinary opposition. They had a few players who caught the eye, but I didn’t think they were as good as Zagreb.
+The first half was laboured and disjointed, but felt we had the better chances against fairly ordinary opposition. They had a few players who caught the eye, but I didn’t think they were as good as Zagreb.
 
 Angulo missed a really good chance from close range, which he will probably agonise over, and Fofana had a blistering shot that was pushed wide. Apart from that, the two wide men huffed and puffed throughout without really doing anything. Rigg was tidy, but I wanted to see a lot more, and the one time he did charge forward we scored a goal.
 
