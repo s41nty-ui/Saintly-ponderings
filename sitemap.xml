@@ -7,7 +7,7 @@ layout: null
     <loc>https://philipsaint.com/</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
   </url>
-{%- for s in site.data.sections %}
+{%- for s in site.data.sections.sections %}
 {%- for a in site[s.collection] %}
   <url>
     <loc>https://philipsaint.com{{ a.url }}</loc>

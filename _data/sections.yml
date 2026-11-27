@@ -1,33 +1,38 @@
-# Homepage sections, in page order. "collection" is the article folder (without the leading _).
-- name: Match Reports
-  collection: match-reports
-  id: match-report
-  icon: /brand_assets/match-reports-figure.webp
-  grey: true
-  sub: Viewed through red &amp; white eyes behind beer goggles
-  all: All match reports
-  back: Back to all match reports
+# Homepage sections, in page order. Edited in Pages CMS under "Sections".
+# "collection" is the article folder (without the leading _) and "id" the #link name: don't change those.
+sections:
+  - name: Match Reports
+    sub: Viewed through red & white eyes behind beer goggles
+    icon: /brand_assets/match-reports-figure.webp
+    grey: true
+    all: All match reports
+    back: Back to all match reports
+    collection: match-reports
+    id: match-report
 
-- name: UK News & Politics
-  collection: news-politics
-  id: news-politics
-  icon: /brand_assets/Megaphone%20Stick%20Figure%20with%20Scarf.png
-  grey: false
-  all: All UK news &amp; politics
-  back: Back to all UK news &amp; politics
+  - name: UK News & Politics
+    sub: ""
+    icon: /brand_assets/Megaphone Stick Figure with Scarf.png
+    grey: false
+    all: All UK news & politics
+    back: Back to all UK news & politics
+    collection: news-politics
+    id: news-politics
 
-- name: Worldwide
-  collection: worldwide
-  id: worldwide
-  icon: /brand_assets/Globe%20and%20Scarf.png
-  grey: true
-  all: All worldwide
-  back: Back to all worldwide
+  - name: Worldwide
+    sub: ""
+    icon: /brand_assets/Globe and Scarf.png
+    grey: true
+    all: All worldwide
+    back: Back to all worldwide
+    collection: worldwide
+    id: worldwide
 
-- name: Musings
-  collection: musings
-  id: musings
-  icon: /brand_assets/writing-at-desk.png
-  grey: false
-  all: All musings
-  back: Back to all musings
+  - name: Musings
+    sub: ""
+    icon: /brand_assets/writing-at-desk.png
+    grey: false
+    all: All musings
+    back: Back to all musings
+    collection: musings
+    id: musings

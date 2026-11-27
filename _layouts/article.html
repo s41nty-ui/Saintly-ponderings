@@ -1,5 +1,5 @@
 <!doctype html>
-{%- assign s = site.data.sections | where: "collection", page.collection | first -%}
+{%- assign s = site.data.sections.sections | where: "collection", page.collection | first -%}
 {%- assign whole = false -%}{%- if page.image_fit contains "whole" -%}{%- assign whole = true -%}{%- endif -%}
 <html lang="en">
 <head>
@@ -97,12 +97,12 @@
       <span>Saintly Ponderings</span>
     </a>
     <nav aria-label="Main">
-      {%- for x in site.data.sections %}
+      {%- for x in site.data.sections.sections %}
       <a href="/#{{ x.id }}">{{ x.name | escape }}</a>
       {%- endfor %}
       <a href="/#about">About</a>
     </nav>
-    <a href="/#{{ s.id }}" class="back-sm">{{ s.all }}</a>
+    <a href="/#{{ s.id }}" class="back-sm">{{ s.all | escape }}</a>
   </div>
 </header>
 
@@ -120,7 +120,7 @@
         </div>
         <p class="meta mobile-only"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
       </div>
-      <div class="more"><a href="/#{{ s.id }}" class="btn">{{ s.back }}</a></div>
+      <div class="more"><a href="/#{{ s.id }}" class="btn">{{ s.back | escape }}</a></div>
     </div>
   </article>
 </main>

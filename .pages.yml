@@ -201,3 +201,43 @@ content:
         description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
         type: string
 
+  - name: sections
+    label: "Sections (homepage headings)"
+    type: file
+    path: _data/sections.yml
+    fields:
+      - name: sections
+        label: Sections
+        description: "In homepage order: drag to reorder. To add or remove a section, ask Claude."
+        type: object
+        list:
+          min: 4
+          max: 4
+        fields:
+          - name: name
+            label: Heading
+            type: string
+            required: true
+          - name: sub
+            label: Subheading (optional)
+            type: string
+          - name: icon
+            label: Logo beside the heading
+            type: image
+          - name: grey
+            label: Grey background
+            type: boolean
+          - name: all
+            label: "\"All...\" button wording"
+            type: string
+          - name: back
+            label: "Back button wording on article pages"
+            type: string
+          - name: collection
+            label: "Technical: article folder (don't change)"
+            type: string
+            readonly: true
+          - name: id
+            label: "Technical: link name (don't change)"
+            type: string
+            readonly: true
