@@ -1,7 +1,7 @@
 ---
 title: Sunderland 1 – 1 Jagiellonia Białystok
 date: 2026-11-26
-image: /brand_assets/jagiellonia.png
+image: /brand_assets/photo_faces_blurred-1.jpg
 image_alt: "Scoreboard: Sunderland 1, Jagiellonia Białystok 1, full time, UEFA
   Europa League league stage, Thursday 26 November 2026. Half-time 0–0. T.
   Tutierov scored in the 47th minute (assisted by E. Le Fée) and K. Jóźwiak
