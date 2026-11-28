@@ -31,7 +31,7 @@ From then on it was turgid stuff and the substitutions didn’t make any differe
 
 It’s definitely a pattern. We make a mistake at the back and it impacts the whole team. They seem to lose their mojo.
 
-For me Sadiki and Le Fee really stood out, and Roefs was in good form, amas he had to be as the second half ran away from us.
+For me Sadiki and Le Fee really stood out, and Roefs was in good form, as he had to be as the second half ran away from us.
 
 Anyway, more boos at the end which I just don't get. I don’t know who these people are, but they're not the sort of fan we need and I’d rather they stayed away.
 
