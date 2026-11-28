@@ -10,7 +10,7 @@ image_background: "#181818"
 ---
 It was cold! I was thinking of excuses to bunk off but Paul offered me a lift, so away we went and parked up near the ground.
 
-We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.
+We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why (police, not poo), as we only spotted a few Polish fans.
 
 The crack in the pub was great. Some took early delivery of the superb Mackem in Milan(o) t-shirts. Big up to the design boys Big Andy, Dom & Dave.
 
