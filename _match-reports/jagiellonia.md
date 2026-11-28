@@ -15,7 +15,9 @@ It was cold! I was thinking of excuses to bunk off but was offered a lift to the
 
 We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.
 
-The pub was nice, had a couple of pints, then walked to the ground, relatively sober.
+The crack in the pub was great. Some took early delivery of the superb Mackem in Milan(o) t-shirts. Big up to the design boys Big Andy, Dom & Dave.
+
+Then it was off to the ground, relatively sober.
 
 Sunderland obviously have to rotate their squad a bit and fielded a relatively weakened side. This does give players not regularly in the first team a chance to shine, but not sure any did.
 
