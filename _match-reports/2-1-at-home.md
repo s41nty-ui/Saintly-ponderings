@@ -1,15 +1,16 @@
 ---
-title: "Sunderland 1 – 0 Chelsea"
+title: Sunderland 1 – 0 Chelsea
 date: 2026-11-08
-image: "/brand_assets/chelsea10.png"
-image_alt: "Scoreboard: Sunderland 1, Chelsea 0, full time, Premier League, Sunday 8 November 2026. E. Le Fée scored a 36th-minute penalty. Venue Stadium of Light, attendance 46,388."
-image_fit: "Show the whole picture"
-image_position: "50% 50%"
+image: /brand_assets/chelsea10.png
+image_alt: "Scoreboard: Sunderland 1, Chelsea 0, full time, Premier League,
+  Sunday 8 November 2026. E. Le Fée scored a 36th-minute penalty. Venue Stadium
+  of Light, attendance 46,388."
+image_fit: Show the whole picture
+heading: Well That Was Fun!
+image_position: 50% 50%
 image_background: "#181818"
-heading: "Well That Was Fun!"
 ---
-
-My brother had stayed up North for this one and there was something special in the air as we set off for the match.
+Our aJohn had stayed up North for this one and there was something special in the air as we set off for the match.
 
 It might be down to the whiskey in our morning coffee, but we were in a very positive frame of mind and convinced a win was on the cards, after our deal with a Croatian devil.
 
