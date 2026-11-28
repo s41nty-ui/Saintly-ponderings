@@ -1,15 +1,17 @@
 ---
-title: "Sunderland 0 – 2 Dinamo Zagreb"
+title: Sunderland 0 – 2 Dinamo Zagreb
 date: 2026-11-05
-image: "/brand_assets/zagreb.png"
-image_alt: "Scoreboard: Sunderland 0, Dinamo Zagreb 2, full time, UEFA Europa League league stage, Thursday 5 November 2026. Goals from L. Stojković (22nd minute) and D. Beljo (39th minute, assisted by Stojković). Venue Stadium of Light, attendance 44,269."
-image_fit: "Show the whole picture"
-image_position: "50% 50%"
+image: /brand_assets/zagreb.png
+image_alt: "Scoreboard: Sunderland 0, Dinamo Zagreb 2, full time, UEFA Europa
+  League league stage, Thursday 5 November 2026. Goals from L. Stojković (22nd
+  minute) and D. Beljo (39th minute, assisted by Stojković). Venue Stadium of
+  Light, attendance 44,269."
+image_fit: Show the whole picture
+heading: Booze not Boos!
+image_position: 50% 50%
 image_background: "#181818"
-heading: "Booze not Boos!"
 ---
-
-My brother was up for his first ever European game and we were both very excited. There were a bunch of black clad Zagreb fans on the metro and we had a nice chat. They were not too optimistic and one offered us a deal - Zagreb beat Sunderland, Sunderland beat Chelsea. I was happy with that and impressed he knew our fixtures. Power of the Premier League I suppose. Still not used to being in the top flight.
+Our John was up for his first ever European game and we were both very excited. There were a bunch of black clad Zagreb fans on the metro and we had a nice chat. They were not too optimistic and one offered us a deal - Zagreb beat Sunderland, Sunderland beat Chelsea. I was happy with that and impressed he knew our fixtures. Power of the Premier League I suppose. Still not used to being in the top flight.
 
 Our new friends left to join more young men dressed in black, and we headed to the pub. It was great fun in the pub, as usual, then many beers later we were off to the ground.
 
