@@ -14,6 +14,6 @@ He's proposing helping young people into work to to get them off benefits. Radic
 
 Then there is the cherry picking our way closer to Europe. Choosing from the  à la carte menu, some might say. Michael Barnier (Brexit negotiator) says we can't, but what does he know?
 
-The 'made in the EU' initiative could be a problem as they look to set up trade blocks to stop the mass imports of Chinese goods, primarily EVs, which could block us as well. I reckon Andy is on it, and we could get best of all worlds. 
+The 'made in the EU' initiative could be a problem as they look to set up trade blocks to stop the mass imports of Chinese goods, primarily EVs, which could also block the UK. I reckon Andy is on it, and we could get best of all worlds. 
 
 Stay close to EU and China and US. Why not?
