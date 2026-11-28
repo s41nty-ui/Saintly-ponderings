@@ -8,7 +8,7 @@ heading: Got wa t-shirts!
 image_position: 50% 50%
 image_background: "#181818"
 ---
-It was cold! I was thinking of excuses to bunk off but Paul offered me a lift, so we set off and parked near the ground.
+It was cold! I was thinking of excuses to bunk off but Paul offered me a lift, so off we went and parked up near the ground.
 
 We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.
 
