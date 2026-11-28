@@ -11,7 +11,7 @@ heading: Brrr!
 image_position: 50% 50%
 image_background: "#181818"
 ---
-It was cold! I was thinking of excuses to bunk off but was offered a lift to the ground.
+It was cold! I was thinking of excuses to bunk off but Paul offered me a lift to near the ground.
 
 We then walked over the bridge into Sunderland to the pub. There was a very heavy police presence and a lot of horse poo. I’m not sure why as we only spotted a few Polish fans.
 
