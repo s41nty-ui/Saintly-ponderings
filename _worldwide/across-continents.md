@@ -1,6 +1,6 @@
 ---
 title: Donald gets a Bloody Nose
-date: 2026-11-01
+date: 2026-11-13
 image: /brand_assets/midterms.jpg
 image_alt: "US midterm election results: Democrats win the Senate 56 seats to 44
   (Democrats up 9) and win the House 257 seats to 172 (Democrats up 43), with
