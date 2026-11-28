@@ -35,4 +35,4 @@ For me Sadiki and Le Fee really stood out, and Roefs was in good form, amas he h
 
 Anyway, more boos at the end which I just don't get. I don’t know who these people are, but they're not the sort of fan we need and I’d rather they stayed away.
 
-All in all a pleasant enough evening, although bloody freezing. Bring on Tottingham.
+Despite not winning I enjoyed the evening, although bloody freezing. Bring on Tottingham.
