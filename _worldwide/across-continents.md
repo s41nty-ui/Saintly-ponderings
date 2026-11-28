@@ -20,4 +20,4 @@ Senator James Talarico said “If President Trump wants the same plaques and por
 
 Senator Abdul El-Sayed stated “If he wants to pass Trump care for all, which will guarantee health care to everyone and put his name on it like he's putting his name on everything, I'm game".
 
-Should be interesting and lets hope it doesn't get completely bogged down in partisan politics (hoping same for UK).
+Should be interesting and lets hope progress doesn't get completely bogged down by partisan political shenanigans (hoping same for UK).
