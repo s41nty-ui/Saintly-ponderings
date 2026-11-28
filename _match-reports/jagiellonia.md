@@ -16,6 +16,10 @@ The crack in the pub was great. Some took early delivery of the superb Mackem in
 
 ![](/brand_assets/Screenshot_20261128_121157_Drive-1.jpg)
 
+
+
+![](/brand_assets/Screenshot_20261128_121212_Drive.jpg)
+
 Then it was off to the ground, relatively sober.
 
 Sunderland obviously have to rotate their squad a bit and fielded a relatively weakened side. This does give players not regularly in the first team a chance to shine, but not sure any did.
