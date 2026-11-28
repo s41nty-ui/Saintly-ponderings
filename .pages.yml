@@ -37,7 +37,7 @@ content:
         type: select
         default: "Fill the frame"
         options:
-          values: ["Fill the frame", "Show the whole picture"]
+          values: ["Fill the frame", "Show the whole picture", "Narrow (portrait photos)"]
       - name: heading
         label: Heading beside the picture
         type: string
@@ -51,7 +51,7 @@ content:
         default: "62% 30%"
       - name: image_background
         label: "Advanced: colour behind the picture"
-        description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
+        description: "Only shows with 'Show the whole picture' (not 'Narrow'), e.g. #181818 for the dark scoreboards."
         type: string
 
   - name: news-politics
@@ -86,7 +86,7 @@ content:
         type: select
         default: "Fill the frame"
         options:
-          values: ["Fill the frame", "Show the whole picture"]
+          values: ["Fill the frame", "Show the whole picture", "Narrow (portrait photos)"]
       - name: heading
         label: Heading beside the picture
         type: string
@@ -100,7 +100,7 @@ content:
         default: "62% 30%"
       - name: image_background
         label: "Advanced: colour behind the picture"
-        description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
+        description: "Only shows with 'Show the whole picture' (not 'Narrow'), e.g. #181818 for the dark scoreboards."
         type: string
 
   - name: worldwide
@@ -135,7 +135,7 @@ content:
         type: select
         default: "Fill the frame"
         options:
-          values: ["Fill the frame", "Show the whole picture"]
+          values: ["Fill the frame", "Show the whole picture", "Narrow (portrait photos)"]
       - name: heading
         label: Heading beside the picture
         type: string
@@ -149,7 +149,7 @@ content:
         default: "62% 30%"
       - name: image_background
         label: "Advanced: colour behind the picture"
-        description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
+        description: "Only shows with 'Show the whole picture' (not 'Narrow'), e.g. #181818 for the dark scoreboards."
         type: string
 
   - name: musings
@@ -184,7 +184,7 @@ content:
         type: select
         default: "Fill the frame"
         options:
-          values: ["Fill the frame", "Show the whole picture"]
+          values: ["Fill the frame", "Show the whole picture", "Narrow (portrait photos)"]
       - name: heading
         label: Heading beside the picture
         type: string
@@ -198,7 +198,7 @@ content:
         default: "62% 30%"
       - name: image_background
         label: "Advanced: colour behind the picture"
-        description: "Only shows with 'Show the whole picture', e.g. #181818 for the dark scoreboards."
+        description: "Only shows with 'Show the whole picture' (not 'Narrow'), e.g. #181818 for the dark scoreboards."
         type: string
 
   - name: sections
