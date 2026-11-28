@@ -28,9 +28,11 @@ There was a bit of excitement when Polish fans revealed themselves in the North 
 
 The first half was laboured and disjointed, but we had the better chances against fairly ordinary opposition. They had a few players who caught the eye, but I didn’t think they were as good as Zagreb.
 
-Angulo missed a really good chance from close range, which he will probably agonise over, and Fofana had a blistering shot that was pushed wide. Apart from that, the two wide men huffed and puffed throughout without really doing anything. Rigg was tidy, but I wanted to see a lot more, and the one time he did charge forward we scored a goal.
+Angulo missed a really good chance from close range, which he will probably agonise over, and Fofana had a blistering shot that was pushed wide. Apart from that, the two wide men huffed and puffed throughout without really doing anything. Rigg was tidy, but I wanted to see a lot more, especially going forward.
 
-That was early in the second half and just as the crowd started to relax, we gifted them a goal from a dodgy Reinildo backpass.
+In the second half Rigg did charge forward with the ball and it resulted in a goal (T. Tutierov (47').
+
+The crowd sighed with relief, then just 5 minutes later we gifted a goal from a dodgy Reinildo back pass.
 
 From then on it was turgid stuff and the substitutions didn’t make any difference. 
 
